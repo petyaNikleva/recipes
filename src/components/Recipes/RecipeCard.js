@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
 
-function RecipeCard ({
-  recipe
-}) {
+function RecipeCard ({recipe}) {
     return (
         <div className="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
         <div className="col-md-6 col-sm-6">

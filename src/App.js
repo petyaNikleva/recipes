@@ -8,7 +8,7 @@ import Recipes from "./components/Recipes/Recipes.js";
 import Footer from "./components/Footer.js";
 import Gallery from "./components/Gallery.js";
 import Header from "./components/Header.js";
-import MyRecipes from "./components/MyRecipes.js";
+import MyRecipes from "./components/MyRecipres/MyRecipes.js";
 import Register from "./components/Register.js";
 import TodaysSpecials from "./components/TodaysSpecials.js";
 import Login from "./components/Login.js";

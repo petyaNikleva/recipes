@@ -1,3 +1,5 @@
+import MyRecipeCard from "./MyRecipeCard.js";
+
 function MyRecipes () {
     return (
         <div id="menu" className="menu-main pad-top-100 pad-bottom-100">
@@ -11,26 +13,11 @@ function MyRecipes () {
                 <p className="title-caption text-center">Това са рецептитете, които сподели с нас. Благодарим ти! </p>
               </div>
               <div className="tab-menu">
-                <div className="slider slider-nav">
-                  {/* <div className="tab-title-menu">
-                    <h2>STARTERS</h2>
-                    <p> <i className="flaticon-canape"></i> </p>
-                  </div>
-                  <div className="tab-title-menu">
-                    <h2>MAIN DISHES</h2>
-                    <p> <i className="flaticon-dinner"></i> </p>
-                  </div>
-                  <div className="tab-title-menu">
-                    <h2>DESERTS</h2>
-                    <p> <i className="flaticon-desert"></i> </p>
-                  </div>
-                  <div className="tab-title-menu">
-                    <h2>DRINKS</h2>
-                    <p> <i className="flaticon-coffee"></i> </p>
-                  </div> */}
-                </div>
                 <div className="slider slider-single">
                   <div>
+
+                  <MyRecipeCard />
+
                     <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
                       <div className="offer-item">
                         <img src="images/menu-item-thumbnail-01.jpg" alt="" className="img-responsive" />
@@ -40,9 +27,10 @@ function MyRecipes () {
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
                           </p>
                         </div>
-                        <span className="offer-price">$8.5</span>
+                        <span className="offer-price">&#128076; 8.5</span>
                       </div>
                     </div>
+
                     <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
                       <div className="offer-item">
                         <img src="images/menu-item-thumbnail-02.jpg" alt="" className="img-responsive" />
@@ -55,6 +43,7 @@ function MyRecipes () {
                         <span className="offer-price">$25</span>
                       </div>
                     </div>
+
                     <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
                       <div className="offer-item">
                         <img src="images/menu-item-thumbnail-03.jpg" alt="" className="img-responsive" />
@@ -69,6 +58,7 @@ function MyRecipes () {
                     </div>
                   </div>
                   <div>
+
                     <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
                       <div className="offer-item">
                         <img src="images/menu-item-thumbnail-04.jpg" alt="" className="img-responsive" />
@@ -81,6 +71,7 @@ function MyRecipes () {
                         <span className="offer-price">$5</span>
                       </div>
                     </div>
+
                     <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
                       <div className="offer-item">
                         <img src="images/menu-item-thumbnail-05.jpg" alt="" className="img-responsive" />
@@ -93,6 +84,7 @@ function MyRecipes () {
                         <span className="offer-price">$15</span>
                       </div>
                     </div>
+
                     <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
                       <div className="offer-item">
                         <img src="images/menu-item-thumbnail-06.jpg" alt="" className="img-responsive" />
@@ -107,6 +99,7 @@ function MyRecipes () {
                     </div>
                   </div>
                   <div>
+
                     <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
                       <div className="offer-item">
                         <img src="images/menu-item-thumbnail-07.jpg" alt="" className="img-responsive" />
@@ -119,6 +112,7 @@ function MyRecipes () {
                         <span className="offer-price">$4.5</span>
                       </div>
                     </div>
+
                     <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
                       <div className="offer-item">
                         <img src="images/menu-item-thumbnail-08.jpg" alt="" className="img-responsive" />
@@ -131,6 +125,7 @@ function MyRecipes () {
                         <span className="offer-price">$9.5</span>
                       </div>
                     </div>
+
                     <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
                       <div className="offer-item">
                         <img src="images/menu-item-thumbnail-09.jpg" alt="" className="img-responsive" />
@@ -145,6 +140,7 @@ function MyRecipes () {
                     </div>
                   </div>
                   <div>
+
                     <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
                       <div className="offer-item">
                         <img src="images/menu-item-thumbnail-10.jpg" alt="" className="img-responsive" />
@@ -157,6 +153,7 @@ function MyRecipes () {
                         <span className="offer-price">$12.5</span>
                       </div>
                     </div>
+
                     <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
                       <div className="offer-item">
                         <img src="images/menu-item-thumbnail-09.jpg" alt="" className="img-responsive" />
@@ -169,6 +166,7 @@ function MyRecipes () {
                         <span className="offer-price">$9.5</span>
                       </div>
                     </div>
+
                     <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
                       <div className="offer-item">
                         <img src="images/menu-item-thumbnail-08.jpg" alt="" className="img-responsive" />
@@ -181,6 +179,7 @@ function MyRecipes () {
                         <span className="offer-price">$5.5</span>
                       </div>
                     </div>
+                    
                   </div>
                 </div>
               </div>
