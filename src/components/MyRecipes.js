@@ -1,4 +1,4 @@
-function OurMenu () {
+function MyRecipes () {
     return (
         <div id="menu" className="menu-main pad-top-100 pad-bottom-100">
         <div className="container">
@@ -6,9 +6,9 @@ function OurMenu () {
             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <div className="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
                 <h2 className="block-title text-center">
-                  Our Menu
+                  МОИТЕ РЕЦЕПТИ
                 </h2>
-                <p className="title-caption text-center">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+                <p className="title-caption text-center">Това са рецептитете, които сподели с нас. Благодарим ти! </p>
               </div>
               <div className="tab-menu">
                 <div className="slider slider-nav">
@@ -190,4 +190,4 @@ function OurMenu () {
       </div>
     )
 }
-export default OurMenu;
+export default MyRecipes;

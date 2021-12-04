@@ -8,7 +8,7 @@ import Recipes from "./components/Recipes/Recipes.js";
 import Footer from "./components/Footer.js";
 import Gallery from "./components/Gallery.js";
 import Header from "./components/Header.js";
-import OurMenu from "./components/OurMenu.js";
+import MyRecipes from "./components/MyRecipes.js";
 import Register from "./components/Register.js";
 import TodaysSpecials from "./components/TodaysSpecials.js";
 import Login from "./components/Login.js";
@@ -24,7 +24,6 @@ const initialAuthState = {
 
 function App() {
   const [user, setUser] = useState(initialAuthState)
-  //console.log(user)
 
   const login = (authData) => {
     setUser(authData);
@@ -45,7 +44,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/recipes" element={<Recipes />} />
             <Route path="/todays-specials" element={<TodaysSpecials />} />
-            <Route path="/menu" element={<OurMenu />} />
+            <Route path="/my-recipes" element={<MyRecipes />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />

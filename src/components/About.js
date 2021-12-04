@@ -1,4 +1,11 @@
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+
+import { AuthContext } from "../context/AuthContext.js"
+
 function About() {
+  const { user } = useContext(AuthContext);
+
   return (
     <div id="about" className="about-main pad-top-100 pad-bottom-100">
       <div className="container">
@@ -13,7 +20,10 @@ function About() {
 
               <p> Отворени сме за вашите предложения за невероятни вкусни рецепти. Регистрирайте се и бъдeте част от нашето семeйството.</p>
               <div className="book-btn">
-                <a href="#reservation" className="table-btn hvr-underline-from-center">Регистрирай се</a>
+                {user?._id
+                  ? null
+                  : <Link to="/register" className="table-btn hvr-underline-from-center">Регистрирай се</Link>
+                }
               </div>
             </div>
           </div>

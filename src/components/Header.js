@@ -14,7 +14,6 @@ function Header() {
             <li><Link to="/register">РЕГИСТРАЦИЯ</Link></li>
             <li><Link to="/recipes">РЕЦЕПТИ</Link></li>
             <li><Link to="/gallery">ГАЛЕРИЯ</Link></li>
-            <li><Link to="/menu">МЕНЮ</Link></li>
         </>
     );
 
@@ -24,8 +23,8 @@ function Header() {
             <li><Link to="/about">ЗА НАС</Link></li>
             <li><Link to="/recipes">РЕЦЕПТИ</Link></li>
             <li><Link to="/create">СЪЗДАЙ РЕЦЕПТА</Link></li>
+            <li><Link to="/my-recipes">МОИТЕ РЕЦЕПТИ</Link></li>
             <li><Link to="/gallery">ГАЛЕРИЯ</Link></li>
-            <li><Link to="/menu">МЕНЮ</Link></li>
             <li><Link to="/logout">ИЗХОД</Link></li>
 
 
