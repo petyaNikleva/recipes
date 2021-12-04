@@ -70,11 +70,11 @@ function Create() {
                                             {/* <input type="email" name="email" id="email" placeholder="СНИМКА..." required="required" data-error="E-mail id is required." /> */}
                                         </div>
                                     </div>
-
+        {/* // TODO: requered notification here and below */}
                                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div className="form-box">
-                                            <select name="difficulty" id="difficulty" className="" defaultValue="0">
-                                                <option defaultValue="НИВО НА ТРУДНОСТ">НИВО НА ТРУДНОСТ...</option>
+                                            <select name="difficulty" id="difficulty" className="" defaultValue="0" required="required">
+                                                <option defaultValue="">НИВО НА ТРУДНОСТ...</option>
                                                 <option defaultValue="ЛЕСНО">ЛЕСНО</option>
                                                 <option defaultValue="ТРУДНО">ТРУДНО</option>
                                             </select>
@@ -84,7 +84,7 @@ function Create() {
                                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div className="form-box">
                                             <select type="text" name="type" id="type" className="">
-                                                <option defaultValue="ТИП...">ТИП...</option>
+                                                <option defaultValue="">ТИП...</option>
                                                 <option defaultValue="ОСНОВНИ">ОСНОВНИ</option>
                                                 <option defaultValue="АЛАМИНУТИ">АЛАМИНУТИ</option>
                                                 <option defaultValue="СУПИ">СУПИ</option>
@@ -94,7 +94,7 @@ function Create() {
 
                                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <div className="form-box">
-                                            <textarea type="text" name="description" id="description" placeholder="ОПИСАНИЕ..." rows="6" cols="105" />
+                                            <textarea type="text" name="description" id="description" placeholder="ОПИСАНИЕ..." required="required" rows="6" cols="105" />
                                         </div>
                                     </div>
 

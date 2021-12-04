@@ -24,6 +24,7 @@ function Register () {
       });
     
   }
+  //TODO: If there is already user wth this name show appropriate message
 
 
     return (
@@ -53,7 +54,7 @@ function Register () {
                   </div>
                   <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div className="form-box">
-                      <input type="text" name="password" id="password" placeholder="ПАРОЛА" data-error="Паролата е задължителна"  />
+                      <input type="text" name="password" id="password" placeholder="ПАРОЛА" required="required" data-error="Паролата е задължителна"  />
                     </div>
                   </div>
                   {/* <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
