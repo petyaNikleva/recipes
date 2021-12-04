@@ -19,6 +19,17 @@ export const login = async (username, password) => {
     }
 };
 
+export const register = ( username, email, password, repeatPassword ) => {
+    return fetch(`${baseUrl}/auth/register`, {
+        method: "POST",
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({ username, email, password, repeatPassword })
+    })
+        .then(res => res.json());
+}
+
 export const logout = (token) => {
     return fetch(`${baseUrl}/auth/logout`, {
         headers: {

@@ -1,4 +1,31 @@
+import { useContext } from 'react';
+import {useNavigate} from "react-router";
+import { AuthContext } from '../context/AuthContext.js';
+
+import * as authService from '../services/authService.js'
+
+
 function Register () {
+  const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
+
+  const registerSubmitHandler = (e) => {
+    e.preventDefault();
+
+    let { username, email, password, repeatPassword } = Object.fromEntries(new FormData(e.currentTarget));
+
+    authService.register( username, email, password, repeatPassword )
+      .then((authData) => {
+        login(authData);
+
+        // TODO - Notification for sucsessful registration
+        
+        navigate('/');
+      });
+    
+  }
+
+
     return (
         <div id="reservation" className="reservations-main pad-top-100 pad-bottom-100">
         <div className="container">
@@ -13,20 +40,20 @@ function Register () {
                 
                 <p>ВСИЧКИ ПОЛЕТА СА ЗАДЪЛЖИТЕЛНИ</p>
 
-                <form id="contact-form" method="post" className="reservations-box" name="contactform">
+                <form id="register-form" method="POST" onSubmit={registerSubmitHandler} className="reservations-box" name="refiter-form">
                   <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div className="form-box">
-                      <input type="text" name="form_name" id="form_name" placeholder="ПОТРЕБИТЕЛСКО ИМЕ" required="required" data-error="Firstname is required." />
+                      <input type="text" name="username" id="username" placeholder="ПОТРЕБИТЕЛСКО ИМЕ" required="required" data-error="Потребителското име е задължително." />
                     </div>
                   </div>
                   <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div className="form-box">
-                      <input type="email" name="email" id="email" placeholder="ИМЕЙЛ" required="required" data-error="E-mail id is required." />
+                      <input type="email" name="email" id="email" placeholder="ИМЕЙЛ" required="required" data-error="Имейлът е задължителен." />
                     </div>
                   </div>
                   <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div className="form-box">
-                      <input type="text" name="phone" id="phone" placeholder="ПАРОЛА" />
+                      <input type="text" name="password" id="password" placeholder="ПАРОЛА" data-error="Паролата е задължителна"  />
                     </div>
                   </div>
                   {/* <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -41,7 +68,7 @@ function Register () {
                   </div> */}
                   <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div className="form-box">
-                      <input type="text" name="date-picker" id="date-picker" placeholder="ПОВТОРИ ПАРОЛА" required="required" data-error="Date is required." />
+                      <input type="text" name="repeatPassword" id="repeatPassword" placeholder="ПОВТОРИ ПАРОЛА" required="required" data-error="Повтори същата парола-задължително поле" />
                     </div>
                   </div>
                   {/* <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -72,7 +99,7 @@ function Register () {
 
                   <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div className="reserve-book-btn text-center">
-                      <button className="hvr-underline-from-center" type="submit" value="SEND" id="submit">СЪЗДАЙ НОВ ПРОФИЛ </button>
+                      <button className="hvr-underline-from-center">СЪЗДАЙ НОВ ПРОФИЛ </button>
                     </div>
                   </div>
                 </form>

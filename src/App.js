@@ -24,7 +24,7 @@ const initialAuthState = {
 
 function App() {
   const [user, setUser] = useState(initialAuthState)
-  console.log(user)
+  //console.log(user)
 
   const login = (authData) => {
     setUser(authData);
