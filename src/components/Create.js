@@ -1,13 +1,15 @@
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import * as recipesService from '../services/recipesService.js';
+import { AuthContext } from '../context/AuthContext.js';
 
 function Create() {
-
+    const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const onRecipeCreate = (e) => {
         e.preventDefault();
-        let formData = new formData(e.currentTarget);
+        let formData = new FormData(e.currentTarget);
 
         let name = formData.get('name');
         let img = formData.get('img');
@@ -15,19 +17,27 @@ function Create() {
         let type = formData.get('type');
         let description = formData.get('description');
 
+        console.log(name)
+        console.log(img)
+        console.log(difficulty)
+        console.log(type)
+        console.log(description)
+        console.log(user._id)
+        console.log(user.token)
+
+
         recipesService.create({
             name,
             img,
             difficulty,
             type,
-            description
-        })
+            description,
+            _ownerId: user._id,
+        }, user.token)
             .then(recipe => {
-                //useNavigate('/recipes')
-                console.log(`${recipe} created`)
+                navigate('/')
             })
            
-
     }
 
     return (
@@ -45,7 +55,7 @@ function Create() {
 
                                 <p style={{color: "orangered"}}>СПОДЕЛИ Я С НАС</p>
 
-                                <form onSubmit={onRecipeCreate} id="contact-form" method="post" className="reservations-box" name="contactform">
+                                <form onSubmit={onRecipeCreate} id="contact-form" method="POST" className="reservations-box" name="contactform">
                                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div className="form-box">
                                             <input type="text" name="name" id="name" placeholder="ИМЕ..." required="required" data-error="Name is required." />
@@ -64,9 +74,9 @@ function Create() {
                                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div className="form-box">
                                             <select name="difficulty" id="difficulty" className="" defaultValue="0">
-                                                <option value="0">НИВО НА ТРУДНОСТ...</option>
-                                                <option value="1">ЛЕСНО</option>
-                                                <option value="2">ТРУДНО</option>
+                                                <option defaultValue="НИВО НА ТРУДНОСТ">НИВО НА ТРУДНОСТ...</option>
+                                                <option defaultValue="ЛЕСНО">ЛЕСНО</option>
+                                                <option defaultValue="ТРУДНО">ТРУДНО</option>
                                             </select>
                                         </div>
                                     </div>
@@ -74,10 +84,10 @@ function Create() {
                                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div className="form-box">
                                             <select type="text" name="type" id="type" className="">
-                                                <option value="0">ТИП...</option>
-                                                <option value="1">ОСНОВНИ</option>
-                                                <option value="2">АЛАМИНУТИ</option>
-                                                <option value="3">СУПИ</option>
+                                                <option defaultValue="ТИП...">ТИП...</option>
+                                                <option defaultValue="ОСНОВНИ">ОСНОВНИ</option>
+                                                <option defaultValue="АЛАМИНУТИ">АЛАМИНУТИ</option>
+                                                <option defaultValue="СУПИ">СУПИ</option>
                                             </select>
                                         </div>
                                     </div>
@@ -90,7 +100,7 @@ function Create() {
 
                                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <div className="reserve-book-btn text-center">
-                                            <button className="hvr-underline-from-center" value="SEND" id="submit">СЪЗДАЙ </button>
+                                            <button className="hvr-underline-from-center">СЪЗДАЙ </button>
                                         </div>
                                     </div>
                                 </form>
