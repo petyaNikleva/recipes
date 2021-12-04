@@ -13,23 +13,25 @@ import Register from "./components/Register.js";
 import TodaysSpecials from "./components/TodaysSpecials.js";
 import Login from "./components/Login.js";
 import Create from './components/Create.js';
+import Logout from './components/Logout.js';
 
 const initialAuthState = {
   _id: '',
-  email: '',
-  accessToken: '',
+  username: '',
+  token: '',
 };
 
 
 function App() {
   const [user, setUser] = useState(initialAuthState)
+  console.log(user)
 
   const login = (authData) => {
     setUser(authData);
   }
 
-  const logout = (authData) => {
-    setUser(authData);
+  const logout = () => {
+    setUser(initialAuthState);
   }
 
   return (
@@ -48,6 +50,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/create" element={<Create />} />
+            <Route path="/logout" element={<Logout />} />
         </Routes>
       </main>
       <Footer />

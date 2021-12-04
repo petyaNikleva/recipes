@@ -54,7 +54,7 @@ function Header() {
                                 </div>
                                 <div id="navbar" className="navbar-collapse collapse">
                                     <ul className="nav navbar-nav navbar-right">
-                                        {user.username
+                                        {user?._id
                                             ? userNavigation
                                             : guestNavigation
                                         }

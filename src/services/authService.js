@@ -18,3 +18,11 @@ export const login = async (username, password) => {
         throw new Error;
     }
 };
+
+export const logout = (token) => {
+    return fetch(`${baseUrl}/auth/logout`, {
+        headers: {
+            'x-authorization': token
+        }
+    })
+};
