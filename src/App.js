@@ -44,11 +44,11 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/recipes" element={<Recipes />} />
             <Route path="/todays-specials" element={<TodaysSpecials />} />
-            <Route path="/my-recipes" element={<MyRecipes />} />
+            <Route path="/recipes/my-recipes" element={<MyRecipes />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/create" element={<Create />} />
+            <Route path="/recipes/create" element={<Create />} />
             <Route path="/logout" element={<Logout />} />
         </Routes>
       </main>

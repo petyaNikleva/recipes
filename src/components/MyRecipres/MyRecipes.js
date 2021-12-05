@@ -1,6 +1,29 @@
+import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+
+import { AuthContext } from "../../context/AuthContext.js";
+
 import MyRecipeCard from "./MyRecipeCard.js";
+import * as recipesService from '../../services/recipesService.js'
+
+
 
 function MyRecipes () {
+    //TODO: Loader
+
+    const { user } = useContext(AuthContext);
+
+    const [myRecipes, setRecipes] = useState([]);
+
+    useEffect(() => {
+      recipesService.getOwn(user._id)
+      .then(result => {
+        console.log(result)
+        setRecipes(result);
+      })
+    }, [] )
+
     return (
         <div id="menu" className="menu-main pad-top-100 pad-bottom-100">
         <div className="container">
@@ -10,14 +33,20 @@ function MyRecipes () {
                 <h2 className="block-title text-center">
                   МОИТЕ РЕЦЕПТИ
                 </h2>
-                <p className="title-caption text-center">Това са рецептитете, които сподели с нас. Благодарим ти! </p>
+                <p className="title-caption text-center">Благодарим ти, че споделяш своите рецепти с нас! </p>
               </div>
               <div className="tab-menu">
                 <div className="slider slider-single">
                   <div>
 
-                  <MyRecipeCard />
+                  {myRecipes.length > 0
+                  ? <>
+                  {myRecipes.map(x => <MyRecipeCard key={x._id} myRecipe={x} />)}
+                  </>
+                  : null
+                }
 
+                    {/*
                     <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
                       <div className="offer-item">
                         <img src="images/menu-item-thumbnail-01.jpg" alt="" className="img-responsive" />
@@ -178,7 +207,7 @@ function MyRecipes () {
                         </div>
                         <span className="offer-price">$5.5</span>
                       </div>
-                    </div>
+                    </div> */}
                     
                   </div>
                 </div>

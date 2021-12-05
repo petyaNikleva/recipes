@@ -12,18 +12,13 @@ export const getOne = async (recipeId) => {
     return recipe;
 }
 
+export const getOwn = async (userId) => {
+    console.log(userId);
+    let response = await fetch(`${baseUrl}/recipes?ownerId=${userId}`);
+    let ownRecipes = await response.json();
+    return ownRecipes;    
+}
 
-// export const create = (recipeData, token) => {
-//     return fetch(`${baseUrl}/recipes`, {
-//         method: 'POST',
-//         headers: {
-//             'content-type': 'applicationa/json',
-//             'x-authorization': token
-//         },
-//         body: JSON.stringify(recipeData)
-//     })
-//     .then(res => res.json());   
-// }
 
 export const create = async (recipeData, token) => {
     let response = await fetch(`${baseUrl}/recipes`, {

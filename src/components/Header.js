@@ -22,8 +22,8 @@ function Header() {
             <li className="active"><Link to="/">НАЧАЛО</Link></li>
             <li><Link to="/about">ЗА НАС</Link></li>
             <li><Link to="/recipes">РЕЦЕПТИ</Link></li>
-            <li><Link to="/create">СЪЗДАЙ РЕЦЕПТА</Link></li>
-            <li><Link to="/my-recipes">МОИТЕ РЕЦЕПТИ</Link></li>
+            <li><Link to="/recipes/create">СЪЗДАЙ РЕЦЕПТА</Link></li>
+            <li><Link to="/recipes/my-recipes">МОИТЕ РЕЦЕПТИ</Link></li>
             <li><Link to="/gallery">ГАЛЕРИЯ</Link></li>
             <li><Link to="/logout">ИЗХОД</Link></li>
 
