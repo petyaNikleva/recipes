@@ -43,7 +43,7 @@ function MyRecipes() {
                       {myRecipes.map(x => <MyRecipeCard key={x._id} myRecipe={x} />)}
                     </>
                     : <div className="blog-box clearfix banner-text">
-                      <h2>Няма добавени рецепти.</h2>
+                      <h2>Нямате добавени рецепти.</h2>
                     </div>
                   }
                 </div>

@@ -14,6 +14,7 @@ import TodaysSpecials from "./components/TodaysSpecials.js";
 import Login from "./components/Login.js";
 import Create from './components/Create.js';
 import Logout from './components/Logout.js';
+import RecipeDetails from './components/RecipeDetails.js';
 
 const initialAuthState = {
   _id: '',
@@ -50,6 +51,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/recipes/create" element={<Create />} />
             <Route path="/logout" element={<Logout />} />
+            <Route path="/test" element={<RecipeDetails />} />
+
         </Routes>
       </main>
       <Footer />

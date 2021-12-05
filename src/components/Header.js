@@ -13,6 +13,7 @@ function Header() {
             <li><Link to="/login">ВХОД</Link></li>
             <li><Link to="/register">РЕГИСТРАЦИЯ</Link></li>
             <li><Link to="/recipes">РЕЦЕПТИ</Link></li>
+            <li><Link to="/test">ТЕСТ ДЕТАЙЛИ</Link></li>
             <li><Link to="/gallery">ГАЛЕРИЯ</Link></li>
         </>
     );
