@@ -1,6 +1,11 @@
-function MyRecipeCard( {myRecipe}) {
-    let shortDescription = myRecipe.description.slice(0,120) + '...';
+import './MyRecipeCard.css';
 
+import {Link} from 'react-router-dom';
+
+function MyRecipeCard( {myRecipe}) {
+    let shortDescription = myRecipe.description.slice(0,70);
+
+    //TODO text decoration - underline for "ВИЖ ОЩЕ"
     return (
         <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
             <div className="offer-item">
@@ -8,7 +13,7 @@ function MyRecipeCard( {myRecipe}) {
                 <div>
                     <h3>{myRecipe.name}</h3>
                     <p>
-                        {shortDescription}
+                        {shortDescription}<span>...<Link className="link" to="/recipes/details/:id">виж още</Link></span>
                     </p>
                    
                 </div>

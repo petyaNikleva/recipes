@@ -1,0 +1,8 @@
+.link {
+    color: orangered;
+    text-decoration: underline !important;
+}
+
+.offer-item {
+    height: 100px;
+}
