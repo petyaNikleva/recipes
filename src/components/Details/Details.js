@@ -14,9 +14,9 @@ function Details() {
 
   useEffect(() => {
     recipeService.getOne(recipeId)
-    .then(recipeResult => {
-      setRecipe(recipeResult)
-    })
+      .then(recipeResult => {
+        setRecipe(recipeResult)
+      })
   }, [recipeId]);
 
   return (
@@ -31,15 +31,17 @@ function Details() {
 
               <p> {recipe.description}. </p>
 
-             
+
               <div className="book-btn">
-                {/* {user?._id
+                {!user?._id
                   ? null
-                  : <Link to="/register" className="table-btn hvr-underline-from-center">Регистрирай се</Link>
-                } */}
-                 <Link to="/recipes/:recipeId/edit" className="table-btn hvr-underline-from-center" style={{borderColor: "white"}}>Редактирай</Link>
-                 <Link to="recipes/:recipeId/delete" className="table-btn hvr-underline-from-center" style={{borderColor: "white"}}>Изтрий</Link>
-                 {/* <Link to="/like" className="table-btn hvr-underline-from-center" style={{borderColor: "white"}}>Харесай</Link> */}
+                  : user._id == recipe._ownerId
+                    ? <>
+                      <Link to="/recipes/:recipeId/edit" className="table-btn hvr-underline-from-center" style={{ borderColor: "white" }}>Редактирай</Link>
+                      <Link to="recipes/:recipeId/delete" className="table-btn hvr-underline-from-center" style={{ borderColor: "white" }}>Изтрий</Link>
+                    </>
+                    : <Link to="/like" className="table-btn hvr-underline-from-center" style={{ borderColor: "white" }}>Харесай</Link>
+                }
               </div>
             </div>
           </div>
@@ -56,5 +58,5 @@ function Details() {
     </div>
   )
 }
-export default 
-Details;
+export default
+  Details;
