@@ -14,7 +14,7 @@ import TodaysSpecials from "./components/TodaysSpecials.js";
 import Login from "./components/Login.js";
 import Create from './components/Create.js';
 import Logout from './components/Logout.js';
-import RecipeDetails from './components/RecipeDetails.js';
+import Details from './components/Details/Details.js';
 
 const initialAuthState = {
   _id: '',
@@ -46,12 +46,12 @@ function App() {
             <Route path="/recipes" element={<Recipes />} />
             <Route path="/todays-specials" element={<TodaysSpecials />} />
             <Route path="/recipes/my-recipes" element={<MyRecipes />} />
-            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/gallery" element={<TodaysSpecials />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/recipes/create" element={<Create />} />
             <Route path="/logout" element={<Logout />} />
-            <Route path="/test" element={<RecipeDetails />} />
+            <Route path="/recipes/details/:recipeId" element={<Details />} />
 
         </Routes>
       </main>

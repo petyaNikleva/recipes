@@ -75,8 +75,8 @@ function Create() {
                                         <div className="form-box">
                                             <select name="difficulty" id="difficulty" className="" defaultValue="0" required="required">
                                                 <option defaultValue="">НИВО НА ТРУДНОСТ...</option>
-                                                <option defaultValue="ЛЕСНО">ЛЕСНО</option>
-                                                <option defaultValue="ТРУДНО">ТРУДНО</option>
+                                                <option defaultValue="Лесно">Лесно</option>
+                                                <option defaultValue="Трудно">Трудно</option>
                                             </select>
                                         </div>
                                     </div>
@@ -85,9 +85,9 @@ function Create() {
                                         <div className="form-box">
                                             <select type="text" name="type" id="type" className="">
                                                 <option defaultValue="">ТИП...</option>
-                                                <option defaultValue="ОСНОВНИ">ОСНОВНИ</option>
-                                                <option defaultValue="АЛАМИНУТИ">АЛАМИНУТИ</option>
-                                                <option defaultValue="СУПИ">СУПИ</option>
+                                                <option defaultValue="Основни">Основни</option>
+                                                <option defaultValue="Аламинути">Аламинути</option>
+                                                <option defaultValue="Супа">Супа</option>
                                             </select>
                                         </div>
                                     </div>
