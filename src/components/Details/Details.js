@@ -10,14 +10,21 @@ function Details() {
   const [recipe, setRecipe] = useState({});
   const { recipeId } = useParams();
 
-  console.log(recipeId)
-
   useEffect(() => {
     recipeService.getOne(recipeId)
       .then(recipeResult => {
         setRecipe(recipeResult)
       })
   }, [recipeId]);
+
+  const deleteHandler = (e) => {
+    e.preventDefault();
+
+    recipeService.deleteRecipe(recipeId, user.token)
+      .then(() => {
+        navigate('/');
+      });
+  }
 
   return (
     <div id="about" className="about-main pad-top-100 pad-bottom-100">
@@ -38,7 +45,7 @@ function Details() {
                   : user._id == recipe._ownerId
                     ? <>
                       <Link to="/recipes/:recipeId/edit" className="table-btn hvr-underline-from-center" style={{ borderColor: "white" }}>Редактирай</Link>
-                      <Link to="recipes/:recipeId/delete" className="table-btn hvr-underline-from-center" style={{ borderColor: "white" }}>Изтрий</Link>
+                      <a href="#" className="table-btn hvr-underline-from-center" onClick={deleteHandler} style={{ borderColor: "white" }}>Изтрий</a>
                     </>
                     : <Link to="/like" className="table-btn hvr-underline-from-center" style={{ borderColor: "white" }}>Харесай</Link>
                 }

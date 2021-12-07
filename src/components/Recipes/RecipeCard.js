@@ -8,7 +8,7 @@ function RecipeCard ({recipe}) {
             <div className="blog-img-box">
               <img src={recipe.img} alt="" style={{width: '250px', height: '200px'}}/>
               <div className="overlay">
-                <Link to={`/recipes/details/${recipe._id}`}><i className="fa fa-link" aria-hidden="true"></i></Link>
+                <Link to={`/recipes/${recipe._id}/details`}><i className="fa fa-link" aria-hidden="true"></i></Link>
               </div>
             </div>
             <div className="blog-dit">

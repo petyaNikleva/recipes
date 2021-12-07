@@ -32,5 +32,14 @@ export const create = async (recipeData, token) => {
 
     let recipe = await response.json();
     return recipe;
-}
+};
+
+export const deleteRecipe = (recipeId, token) => {
+    return fetch(`${baseUrl}/recipes/${recipeId}`, {
+        method: 'DELETE',
+        headers: {
+            'x-authorization': token
+        }
+    }).then(res => res.json());
+} 
 

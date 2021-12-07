@@ -12,7 +12,7 @@ function MyRecipeCard( {myRecipe}) {
                 <div>
                     <h3>{myRecipe.name}</h3>
                     <p>
-                        {shortDescription}<span>...<Link className="link" to={`/recipes/details/${myRecipe._id}`}>виж рецептата</Link></span>
+                        {shortDescription}<span>...<Link className="link" to={`/recipes/${myRecipe._id}/details`}>виж рецептата</Link></span>
                     </p>
                    
                 </div>
