@@ -19,11 +19,12 @@ function Details() {
 
   const deleteHandler = (e) => {
     e.preventDefault();
+    console.log(recipeId, user.token)
 
     recipeService.deleteRecipe(recipeId, user.token)
       .then(() => {
         navigate('/');
-      });
+      })
   }
 
   return (
