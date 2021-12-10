@@ -12,8 +12,6 @@ function Header() {
             <li><Link to="/about">ЗА НАС</Link></li>
             <li><Link to="/login">ВХОД</Link></li>
             <li><Link to="/register">РЕГИСТРАЦИЯ</Link></li>
-            <li><Link to="/recipes">РЕЦЕПТИ</Link></li>
-            <li><Link to="/gallery">ГАЛЕРИЯ</Link></li>
         </>
     );
 
