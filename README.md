@@ -8,8 +8,7 @@ In the project directory in folder Back-end, you can run:
 
 ### `npm start`
 Runs the app in the development mode.\
-Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
-
+The server will be running on [http://localhost:5000](http://localhost:5000) 
 
 In the project directory in folder Front-end, you can run:
 
