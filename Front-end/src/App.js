@@ -42,9 +42,7 @@ function App() {
             <Route path="/" element={<Banner />} />
             <Route path="/about" element={<About />} />
             <Route path="/recipes" element={<Recipes />} />
-            <Route path="/todays-specials" element={<TodaysSpecials />} />
             <Route path="/recipes/my-recipes" element={<MyRecipes />} />
-            <Route path="/gallery" element={<TodaysSpecials />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/recipes/create" element={<Create />} />
