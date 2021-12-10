@@ -13,18 +13,35 @@ function Details() {
   useEffect(() => {
     recipeService.getOne(recipeId)
       .then(recipeResult => {
+        console.log(recipeResult);
         setRecipe(recipeResult)
       })
   }, [recipeId]);
 
   const deleteHandler = (e) => {
     e.preventDefault();
-    console.log(recipeId, user.token)
 
     recipeService.deleteRecipe(recipeId, user.token)
       .then(() => {
         navigate('/');
       })
+  }
+
+  const likeClickHandler = () => {
+    if (recipe.likes.includes(user._id)) {
+      //TODO Notification ==-user has already liked this recipe
+      return;
+    }
+    let likes = [...recipe.likes, user._id];
+    let likedRecipe = { ...recipe, likes }
+
+    recipeService.like(recipe._id, likedRecipe, user.token)
+      .then((resData) => {
+        // console.log(resData);
+        // console.log(likes)
+        setRecipe(resData);
+      })
+
   }
 
   return (
@@ -39,7 +56,7 @@ function Details() {
 
               <p> {recipe.description}. </p>
 
-
+              <div className="offer-price">Харесвания: &#128077; {recipe.likes?.length}</div>
               <div className="book-btn">
                 {!user?._id
                   ? null
@@ -48,7 +65,7 @@ function Details() {
                       <Link to="/recipes/:recipeId/edit" className="table-btn hvr-underline-from-center" style={{ borderColor: "white" }}>Редактирай</Link>
                       <a href="#" className="table-btn hvr-underline-from-center" onClick={deleteHandler} style={{ borderColor: "white" }}>Изтрий</a>
                     </>
-                    : <Link to="/like" className="table-btn hvr-underline-from-center" style={{ borderColor: "white" }}>Харесай</Link>
+                    : <button onClick={likeClickHandler} className="table-btn hvr-underline-from-center" style={{ borderColor: "white" }}>Харесай</button>
                 }
               </div>
             </div>
