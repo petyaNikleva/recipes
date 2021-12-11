@@ -13,6 +13,7 @@ import Login from "./components/Login.js";
 import Create from './components/Create.js';
 import Logout from './components/Logout.js';
 import Details from './components/Details/Details.js';
+import Edit from './components/Edit/Edit.js';
 
 const initialAuthState = {
   _id: '',
@@ -45,8 +46,9 @@ function App() {
             <Route path="/recipes/my-recipes" element={<MyRecipes />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/recipes/create" element={<Create />} />
             <Route path="/logout" element={<Logout />} />
+            <Route path="/recipes/create" element={<Create />} />
+            <Route path="/recipes/edit/:recipeId" element={<Edit />} />
             <Route path="/recipes/details/:recipeId" element={<Details />} />
 
         </Routes>

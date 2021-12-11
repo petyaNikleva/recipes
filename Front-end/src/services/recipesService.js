@@ -18,7 +18,6 @@ export const getOwn = async (userId) => {
     return ownRecipes;    
 }
 
-
 export const create = async (recipeData, token) => {
     let response = await fetch(`${baseUrl}/recipes`, {
         method: 'POST',
@@ -32,6 +31,20 @@ export const create = async (recipeData, token) => {
     let recipe = await response.json();
     return recipe;
 };
+
+export const update = async (recipeId, recipeData, token) => {
+    let response = await fetch(`${baseUrl}/recipes/edit/${recipeId}`, {
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json',
+            'x-authorization': token
+        },
+        body: JSON.stringify({...recipeData})
+    });
+
+    let updatedRecipe = await response.json();
+    return updatedRecipe;
+}
 
 export const deleteRecipe = (recipeId, token) => {
     return fetch(`${baseUrl}/recipes/${recipeId}`, {

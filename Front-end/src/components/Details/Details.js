@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 
-import * as recipeService from '../../services/recipesService.js'
+import * as recipesService from '../../services/recipesService.js'
 import { AuthContext } from "../../context/AuthContext.js"
 
 function Details() {
@@ -11,7 +11,7 @@ function Details() {
   const { recipeId } = useParams();
 
   useEffect(() => {
-    recipeService.getOne(recipeId)
+    recipesService.getOne(recipeId)
       .then(recipeResult => {
         setRecipe(recipeResult)
       })
@@ -20,7 +20,7 @@ function Details() {
   const deleteHandler = (e) => {
     e.preventDefault();
 
-    recipeService.deleteRecipe(recipeId, user.token)
+    recipesService.deleteRecipe(recipeId, user.token)
       .then(() => {
         navigate('/');
       })
@@ -34,7 +34,7 @@ function Details() {
     let likes = [...recipe.likes, user._id];
     let likedRecipe = { ...recipe, likes }
 
-    recipeService.like(recipe._id, likedRecipe, user.token)
+    recipesService.like(recipe._id, likedRecipe, user.token)
       .then(() => {
         setRecipe(state => ({...state, likes}));
       })
@@ -59,7 +59,7 @@ function Details() {
                   ? null
                   : user._id == recipe._ownerId
                     ? <>
-                      <Link to="/recipes/edit/:recipeId" className="table-btn hvr-underline-from-center" style={{ borderColor: "white" }}>Редактирай</Link>
+                      <Link to={`/recipes/edit/${recipe._id}`} className="table-btn hvr-underline-from-center" style={{ borderColor: "white" }}>Редактирай</Link>
                       <a href="#" className="table-btn hvr-underline-from-center" onClick={deleteHandler} style={{ borderColor: "white" }}>Изтрий</a>
                     </>
                     : <button onClick={likeClickHandler} className="table-btn hvr-underline-from-center" style={{ borderColor: "white" }}>Харесай</button>
@@ -80,5 +80,4 @@ function Details() {
     </div>
   )
 }
-export default
-  Details;
+export default Details;
