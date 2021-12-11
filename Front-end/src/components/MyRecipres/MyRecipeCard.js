@@ -1,22 +1,26 @@
 import './MyRecipeCard.css';
 
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-function MyRecipeCard( {myRecipe}) {
-    let shortDescription = myRecipe.description.slice(0,64);
+function MyRecipeCard({ myRecipe }) {
+    let shortDescription = myRecipe.description.slice(0, 35).trim() + '...';
 
     return (
         <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
             <div className="offer-item">
-                <img src={myRecipe.img} alt="recipe img" className="img-responsive" />
+                <Link className="link" to={`/recipes/${myRecipe._id}/details`}>
+                    <img src={myRecipe.img} alt="recipe img" className="img-responsive" />
+                </Link>
                 <div>
-                    <h3>{myRecipe.name}</h3>
+                    <Link className="link" to={`/recipes/${myRecipe._id}/details`}>
+                        <h3>{myRecipe.name}</h3>
+                    </Link>
                     <p>
-                        {shortDescription}<span>...<Link className="link" to={`/recipes/${myRecipe._id}/details`}>виж рецептата</Link></span>
+                        {shortDescription}
                     </p>
-                   
+
                 </div>
-                <span className="offer-price">&#128077; 10</span>
+                <span className="offer-price">&#128077; {myRecipe.likes?.length}</span>
             </div>
         </div>
     )

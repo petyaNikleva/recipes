@@ -868,7 +868,7 @@ html, body{ height: 100%; }
     -webkit-transform: translate(0, -50%);
     transform: translate(0, -50%);
     color: #000;
-    font-size: 26px;
+    font-size: 20px;
     font-family: 'Roboto', sans-serif;
     text-align: center;
     letter-spacing: .5px;

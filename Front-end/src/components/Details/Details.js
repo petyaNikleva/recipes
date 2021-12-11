@@ -13,7 +13,6 @@ function Details() {
   useEffect(() => {
     recipeService.getOne(recipeId)
       .then(recipeResult => {
-        console.log(recipeResult);
         setRecipe(recipeResult)
       })
   }, [recipeId]);
@@ -37,8 +36,6 @@ function Details() {
 
     recipeService.like(recipe._id, likedRecipe, user.token)
       .then(() => {
-        // console.log(resData);
-        // console.log(likes)
         setRecipe(state => ({...state, likes}));
       })
 
