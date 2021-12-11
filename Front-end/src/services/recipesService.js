@@ -13,7 +13,6 @@ export const getOne = async (recipeId) => {
 }
 
 export const getOwn = async (userId) => {
-    console.log(userId);
     let response = await fetch(`${baseUrl}/recipes?ownerId=${userId}`);
     let ownRecipes = await response.json();
     return ownRecipes;    

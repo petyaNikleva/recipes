@@ -19,7 +19,6 @@ function MyRecipes() {
   useEffect(() => {
     recipesService.getOwn(user._id)
       .then(result => {
-        console.log(result)
         setRecipes(result);
       })
   }, [])

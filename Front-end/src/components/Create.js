@@ -18,15 +18,6 @@ function Create() {
         let type = formData.get('type');
         let description = formData.get('description');
 
-        console.log(name)
-        console.log(img)
-        console.log(difficulty)
-        console.log(type)
-        console.log(description)
-        console.log(user._id)
-        console.log(user.token)
-
-
         recipesService.create({
             name,
             img,

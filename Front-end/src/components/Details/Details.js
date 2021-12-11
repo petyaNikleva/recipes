@@ -59,7 +59,7 @@ function Details() {
                   ? null
                   : user._id == recipe._ownerId
                     ? <>
-                      <Link to="/recipes/:recipeId/edit" className="table-btn hvr-underline-from-center" style={{ borderColor: "white" }}>Редактирай</Link>
+                      <Link to="/recipes/edit/:recipeId" className="table-btn hvr-underline-from-center" style={{ borderColor: "white" }}>Редактирай</Link>
                       <a href="#" className="table-btn hvr-underline-from-center" onClick={deleteHandler} style={{ borderColor: "white" }}>Изтрий</a>
                     </>
                     : <button onClick={likeClickHandler} className="table-btn hvr-underline-from-center" style={{ borderColor: "white" }}>Харесай</button>
