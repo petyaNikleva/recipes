@@ -36,10 +36,10 @@ function Details() {
     let likedRecipe = { ...recipe, likes }
 
     recipeService.like(recipe._id, likedRecipe, user.token)
-      .then((resData) => {
+      .then(() => {
         // console.log(resData);
         // console.log(likes)
-        setRecipe(resData);
+        setRecipe(state => ({...state, likes}));
       })
 
   }
