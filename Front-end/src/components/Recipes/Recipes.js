@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-import { AuthContext } from "../../context/AuthContext.js"
+import { useAuthContext } from "../../context/AuthContext.js"
 
 import RecipeCard from "./RecipeCard.js";
 import * as recipesService from "../../services/recipesService.js";
@@ -18,7 +18,7 @@ function Recipes() {
             })
     }, []);
 
-    const { user } = useContext(AuthContext);
+    const { user } = useAuthContext();
 
     return (
         <>

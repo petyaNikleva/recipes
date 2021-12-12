@@ -2,11 +2,11 @@ import { useState, useEffect, useContext } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 
 import * as recipesService from '../../services/recipesService.js'
-import { AuthContext } from "../../context/AuthContext.js"
+import { useAuthContext } from "../../context/AuthContext.js"
 
 function Details() {
   const navigate = useNavigate();
-  const { user } = useContext(AuthContext);
+  const { user } = useAuthContext();
   const [recipe, setRecipe] = useState({});
   const { recipeId } = useParams();
 

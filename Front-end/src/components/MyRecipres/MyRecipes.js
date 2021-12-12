@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 
-import { AuthContext } from "../../context/AuthContext.js";
+import { useAuthContext } from "../../context/AuthContext.js";
 
 import MyRecipeCard from "./MyRecipeCard.js";
 import * as recipesService from '../../services/recipesService.js'
@@ -12,7 +12,7 @@ import * as recipesService from '../../services/recipesService.js'
 function MyRecipes() {
   //TODO: Loader
 
-  const { user } = useContext(AuthContext);
+  const { user } = useAuthContext();
 
   const [myRecipes, setRecipes] = useState([]);
 

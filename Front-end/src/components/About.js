@@ -1,10 +1,10 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-import { AuthContext } from "../context/AuthContext.js"
+import { useAuthContext } from "../context/AuthContext.js"
 
 function About() {
-  const { user } = useContext(AuthContext);
+  const { user } = useAuthContext();
 
   return (
     <div id="about" className="about-main pad-top-100 pad-bottom-100">

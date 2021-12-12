@@ -1,11 +1,11 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as recipesService from '../services/recipesService.js';
-import { AuthContext } from '../context/AuthContext.js';
+import { useAuthContext } from '../context/AuthContext.js';
 
 
 function Create() {
-    const { user } = useContext(AuthContext);
+    const { user } = useAuthContext();
     const navigate = useNavigate();
 
     const onRecipeCreate = (e) => {
@@ -91,7 +91,7 @@ function Create() {
 
                                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <div className="reserve-book-btn text-center">
-                                            <button className="hvr-underline-from-center">СЪЗДАЙ </button>
+                                            <button className="hvr-underline-from-center">СЪЗДАЙ</button>
                                         </div>
                                     </div>
                                 </form>

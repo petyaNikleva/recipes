@@ -1,11 +1,11 @@
 import { useContext  } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { AuthContext } from '../context/AuthContext.js';
+import { useAuthContext } from '../context/AuthContext.js';
 import * as authService from '../services/authService.js'
 
 function Login () {
-  const { login } = useContext(AuthContext);
+  const { login } = useAuthContext();
   const navigate = useNavigate();
 
   const loginSubmitHandler = (e) => {
