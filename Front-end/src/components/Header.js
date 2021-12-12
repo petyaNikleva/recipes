@@ -1,10 +1,9 @@
-import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-import { AuthContext } from "../context/AuthContext.js"
+import { useAuthContext } from "../context/AuthContext.js"
 
 function Header() {
-    const { user } = useContext(AuthContext);
+    const { user } = useAuthContext();
 
     let guestNavigation = (
         <>
@@ -43,7 +42,7 @@ function Header() {
                                     </button>
                                     <div className="logo">
                                         <a className="navbar-brand js-scroll-trigger logo-header" href="#">
-                                            <img src="images/logo.png" alt="" />
+                                            <img src="/images/logo.png" alt="" />
                                         </a>
                                     </div>
                                 </div>

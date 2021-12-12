@@ -7,7 +7,7 @@ function Footer () {
               <div className="footer-in-main">
                 <div className="footer-logo">
                   <div className="text-center">
-                    <img src="images/logo.png" alt="" />
+                    <img src="/images/logo.png" alt="" />
                   </div>
                 </div>
 
