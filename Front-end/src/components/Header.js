@@ -7,7 +7,7 @@ function Header() {
 
     let guestNavigation = (
         <>
-            <li className="active"><Link to="/">НАЧАЛО</Link></li>
+            <li><Link to="/">НАЧАЛО</Link></li>
             <li><Link to="/recipes">РЕЦЕПТИ</Link></li>
             <li><Link to="/login">ВХОД</Link></li>
             <li><Link to="/register">РЕГИСТРАЦИЯ</Link></li>

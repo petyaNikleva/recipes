@@ -1,10 +1,10 @@
 import { Navigate, Outlet } from 'react-router-dom';
 import {useAuthContext } from '../../context/AuthContext.js';
 
-const PrivateRoute = () => {
+const PublicRoute = () => {
     const { isAuthenticated } = useAuthContext();
 
-    return isAuthenticated ? <Outlet /> : <Navigate to="/Page-Not-Found-404" />
+    return !isAuthenticated ? <Outlet /> : <Navigate to="/Page-Not-Found-404" />
 }
 
-export default PrivateRoute;
+export default PublicRoute;
