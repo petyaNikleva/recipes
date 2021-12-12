@@ -21,7 +21,12 @@ function Register () {
         // TODO - Notification for sucsessful registration
         
         navigate('/');
-      });
+      })
+      .catch(err => {
+        //TO DO notification
+        console.log(err);
+        console.log('Потребитеското име е заето');
+      }) 
     
   }
   //TODO: If there is already user wth this name show appropriate message
