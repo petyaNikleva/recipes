@@ -29,7 +29,7 @@ router.post('/', auth, async (req, res) => {
 router.put('/:recipeId', auth, async (req, res) => {
 
     let recipe = await recipesService.update(req.params.recipeId, req.body);
-    console.log(recipe)
+    //console.log(recipe)
      res.json(recipe);
 });
 

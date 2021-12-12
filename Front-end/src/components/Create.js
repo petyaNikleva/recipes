@@ -27,7 +27,7 @@ function Create() {
             _ownerId: user._id,
         }, user.token)
             .then(recipe => {
-                navigate('/')
+                navigate('/recipes/my-recipes')
             })
 
     }
