@@ -4,7 +4,7 @@ import {useAuthContext } from '../../context/AuthContext.js';
 const PublicRoute = () => {
     const { isAuthenticated } = useAuthContext();
 
-    return !isAuthenticated ? <Outlet /> : <Navigate to="/Page-Not-Found-404" />
+    return !isAuthenticated ? <Outlet /> : <Navigate to="/" />
 }
 
 export default PublicRoute;
