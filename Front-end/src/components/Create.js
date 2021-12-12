@@ -50,7 +50,7 @@ function Create() {
                                 <form onSubmit={onRecipeCreate} id="contact-form" method="POST" className="reservations-box" name="contactform">
                                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div className="form-box">
-                                            <input type="text" name="name" id="name" placeholder="ИМЕ..." required minLength="3" data-error="Name is required." />
+                                            <input type="text" name="name" id="name" placeholder="ИМЕ..." required minLength="5" data-error="Name is required." />
                                         </div>
                                     </div>
 
@@ -85,7 +85,7 @@ function Create() {
 
                                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <div className="form-box">
-                                            <textarea type="text" name="description" id="description" placeholder="ОПИСАНИЕ..." required minlength="3"  rows="6" cols="105" />
+                                            <textarea type="text" name="description" id="description" placeholder="ОПИСАНИЕ..." required minLength="10"  rows="6" cols="105" />
                                         </div>
                                     </div>
 
