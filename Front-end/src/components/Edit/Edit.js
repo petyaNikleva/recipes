@@ -67,7 +67,7 @@ function Edit() {
                                 <form onSubmit={onEditRecipe} id="contact-form" method="POST" className="reservations-box" name="contactform">
                                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div className="form-box">
-                                            <input type="text" name="name" id="name" placeholder="ИМЕ..." required minlength="3" data-error="Name is required." defaultValue={recipe.name}/>
+                                            <input type="text" name="name" id="name" placeholder="ИМЕ..." required minLength="3" data-error="Name is required." defaultValue={recipe.name}/>
                                         </div>
                                     </div>
 
@@ -80,7 +80,7 @@ function Edit() {
                                     {/* // TODO: requered notification here and below */}
                                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div className="form-box">
-                                            <select name="difficulty" id="difficulty" className="" required value={recipe.difficulty}>
+                                            <select name="difficulty" id="difficulty" className="" required value={recipe.difficulty} onChange={(e) => setRecipe(s => ({...s, difficulty: e.target.value}))}>
                                                 <option value="">НИВО НА ТРУДНОСТ...</option>
                                                 <option value="Лесно">Лесно</option>
                                                 <option value="Трудно">Трудно</option>
@@ -90,11 +90,12 @@ function Edit() {
 
                                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div className="form-box">
-                                            <select type="text" name="type" id="type" required value={recipe.type}>
-                                                <option className="unselectable" value="">ТИП...</option>
+                                            <select type="text" name="type" id="type" required value={recipe.type} onChange={(e) => setRecipe(s => ({...s, type: e.target.value}))}>
+                                                <option value="">ТИП...</option>
                                                 <option value="Основни">Основни</option>
                                                 <option value="Аламинути">Аламинути</option>
-                                                <option value="Супа">Супа</option>
+                                                <option value="Супи">Супи</option>
+                                                <option value="Десерти">Десерти</option>
                                             </select>
                                         </div>
                                     </div>

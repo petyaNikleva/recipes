@@ -33,7 +33,7 @@ export const create = async (recipeData, token) => {
 };
 
 export const update = async (recipeId, recipeData, token) => {
-    let response = await fetch(`${baseUrl}/recipes/edit/${recipeId}`, {
+    let response = await fetch(`${baseUrl}/recipes/${recipeId}`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json',
