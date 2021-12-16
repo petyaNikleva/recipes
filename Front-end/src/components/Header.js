@@ -6,7 +6,8 @@ function Header() {
     const { user } = useAuthContext();
 
     let guestNavigation = (
-        <>
+        <>  
+            <li><Link to="/test">TEST NOTIFICATION</Link></li>
             <li><Link to="/">НАЧАЛО</Link></li>
             <li><Link to="/recipes">РЕЦЕПТИ</Link></li>
             <li><Link to="/login">ВХОД</Link></li>

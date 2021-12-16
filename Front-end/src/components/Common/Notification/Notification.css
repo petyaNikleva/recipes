@@ -1,0 +1,10 @@
+.notification-container {
+  position: fixed; /* Stay in place */
+  z-index: 10; /* Sit on top */
+  right: 0;
+  margin: 5px;
+  top: 18%;
+  width: 30%; /* Full width */
+  height: 50%; /* Full height */
+  overflow: none; /* Enable scroll if needed */
+}

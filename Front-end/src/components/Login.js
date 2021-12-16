@@ -2,10 +2,13 @@ import { useContext  } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { useAuthContext } from '../context/AuthContext.js';
+import { useNotificationContext, types } from '../context/NotificationContext.js';
+
 import * as authService from '../services/authService.js'
 
 function Login () {
   const { login } = useAuthContext();
+  const { addNotification } = useNotificationContext();
   const navigate = useNavigate();
 
   const loginSubmitHandler = (e) => {
@@ -18,12 +21,11 @@ function Login () {
     authService.login(username, password)
       .then((authData) => {
         login(authData);
-
+        addNotification('You logged in successfully', types.success);
         navigate('/');
       })
       .catch(err => {
         //TO DO notification
-        console.log(err);
         console.log('Невалидно потребителско име или парола');
       }) 
 
