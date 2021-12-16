@@ -1,14 +1,17 @@
 import { useNavigate } from 'react-router-dom';
 import * as recipesService from '../services/recipesService.js';
 import { useAuthContext } from '../context/AuthContext.js';
+import { useNotificationContext, types } from '../context/NotificationContext.js';
 
 
 function Create() {
     const { user } = useAuthContext();
+    const { addNotification } = useNotificationContext();
     const navigate = useNavigate();
 
     const onRecipeCreate = (e) => {
         e.preventDefault();
+
         let formData = new FormData(e.currentTarget);
 
         let name = formData.get('name');
@@ -26,8 +29,12 @@ function Create() {
             _ownerId: user._id,
         }, user.token)
             .then(recipe => {
+                addNotification('Успешно създаде рецепта!', types.success);
                 navigate('/recipes/my-recipes')
-            })
+            }) 
+            .catch(err => {
+                addNotification('Възникна грешка. Опитай пак!', types.danger);
+              }) 
 
     }
 

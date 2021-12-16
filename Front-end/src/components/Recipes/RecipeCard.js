@@ -16,7 +16,7 @@ function RecipeCard ({recipe}) {
             <div className="blog-info col-lg-6 col-md-6">
               <p><span>{recipe.type}</span></p>
               <h3 className='blog-info-h2'>{recipe.name}</h3>
-              <h5>НИВО НА ТРУДНОСТ: {recipe.difficulty}</h5>
+              <h5>Ниво на трудност: {recipe.difficulty}</h5>
             </div>
           </div>
         </div>

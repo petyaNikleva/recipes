@@ -1,35 +1,36 @@
 import {useNavigate} from "react-router";
 import { useAuthContext } from '../context/AuthContext.js';
+import { useNotificationContext, types } from '../context/NotificationContext.js';
 
 import * as authService from '../services/authService.js'
-
 
 function Register () {
   const navigate = useNavigate();
   const { login } = useAuthContext();
+  const { addNotification } = useNotificationContext();
 
   const registerSubmitHandler = (e) => {
     e.preventDefault();
 
     let { username, email, password, repeatPassword } = Object.fromEntries(new FormData(e.currentTarget));
+    if (password !== repeatPassword) {
+      addNotification('Паролите не съвпадат!', types.danger);
+      return;
+    }
 
     authService.register( username, email, password, repeatPassword )
       .then((authData) => {
         login(authData);
-
+        addNotification('Успешна регисрация!', types.success);
         // TODO - Notification for sucsessful registration
         
         navigate('/');
       })
       .catch(err => {
-        //TO DO notification
-        console.log(err);
-        console.log('Потребитеското име е заето');
+        addNotification('Потребитеското име вече е заето.', types.danger);
       }) 
     
   }
-  //TODO: If there is already user wth this name show appropriate message
-
 
     return (
         <div id="reservation" className="reservations-main pad-top-100 pad-bottom-100">

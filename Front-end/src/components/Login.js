@@ -21,12 +21,10 @@ function Login () {
     authService.login(username, password)
       .then((authData) => {
         login(authData);
-        addNotification('You logged in successfully', types.success);
         navigate('/');
       })
       .catch(err => {
-        //TO DO notification
-        console.log('Невалидно потребителско име или парола');
+        addNotification('Грешно потребителско име или парола.', types.danger);
       }) 
 
   }

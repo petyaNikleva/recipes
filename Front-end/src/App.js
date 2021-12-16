@@ -31,7 +31,6 @@ function App() {
 
                     <main id="main-content">
                         <Routes>
-                            <Route path="/test" element={<Notification />} />
                             <Route path="/" element={<Banner />} />
                             <Route path="/about" element={<About />} />
                             <Route path="/recipes" element={<Recipes />} />
