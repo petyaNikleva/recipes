@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import { useContext } from "react";
-import { Link } from "react-router-dom";
 
 import { useAuthContext } from "../../context/AuthContext.js";
 

@@ -16,7 +16,7 @@ export const login = async (username, password) => {
         return jsonResult;
     } else {
         //throw jsonResult.message;
-        throw new Error;
+        throw new Error('Error');
     }
 };
 

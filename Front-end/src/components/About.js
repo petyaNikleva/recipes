@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useAuthContext } from "../context/AuthContext.js"
@@ -30,8 +29,8 @@ function About() {
           <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div className="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
               <div className="about-images">
-                <img className="about-main" src="images/about-main.jpg" alt="About Main Image" />
-                <img className="about-inset" src="images/about-inset.jpg" alt="About Inset Image" />
+                <img className="about-main" src="images/about-main.jpg" alt="About Main" />
+                <img className="about-inset" src="images/about-inset.jpg" alt="About Inset" />
               </div>
             </div>
           </div>
