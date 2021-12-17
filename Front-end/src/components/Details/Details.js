@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 
 import * as recipesService from '../../services/recipesService.js'
 import { useAuthContext } from "../../context/AuthContext.js"
+import { useNotificationContext, types } from '../../context/NotificationContext.js';
 
 import Modal from '../../components/Common/Modal/Modal.js'
 
@@ -12,6 +13,7 @@ function Details() {
   const [recipe, setRecipe] = useState({});
   const { recipeId } = useParams();
   const [show, setShow] = useState(false);
+  const { addNotification } = useNotificationContext();
 
   useEffect(() => {
     let abortController = new AbortController(); 
@@ -49,7 +51,7 @@ function Details() {
 
   const likeClickHandler = () => {
     if (recipe.likes.includes(user._id)) {
-      //TODO Notification ==-user has already liked this recipe
+      addNotification('Вече си харесал тази рецепта!', types.danger);
       return;
     }
     let likes = [...recipe.likes, user._id];
