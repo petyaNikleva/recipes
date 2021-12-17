@@ -24,14 +24,9 @@ function Login() {
         navigate('/');
       })
       .catch(err => {
-        console.log(err.message);
-        if (err.message === 'Failed to fetch') {
-          addNotification('Възникна грешка. Опитайте по-късно.', types.danger);
-
-        } else {
-          addNotification('Грешно потребителско име или парола.', types.danger);
-
-        }
+        err.message === 'Failed to fetch'
+          ? addNotification('Възникна грешка. Опитайте по-късно.', types.danger)
+          : addNotification('Грешно потребителско име или парола.', types.danger);
       })
 
   }
