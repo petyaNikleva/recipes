@@ -22,12 +22,12 @@ function Register () {
       .then((authData) => {
         login(authData);
         addNotification('Успешна регисрация!', types.success);
-        // TODO - Notification for sucsessful registration
-        
         navigate('/');
       })
       .catch(err => {
-        addNotification('Потребитеското име вече е заето.', types.danger);
+        err.message === 'Failed to fetch'
+        ? addNotification('Възникна грешка. Опитайте по-късно.', types.danger)
+        : addNotification('Потребитеското име вече е заето.', types.danger)
       }) 
     
   }
@@ -62,46 +62,11 @@ function Register () {
                       <input type="text" name="password" id="password" placeholder="ПАРОЛА" required="required" data-error="Паролата е задължителна"  />
                     </div>
                   </div>
-                  {/* <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <div className="form-box">
-                      <select name="no_of_persons" id="no_of_persons" className="selectpicker">
-                        <option value="0" disabled>No. Of persons</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                      </select>
-                    </div>
-                  </div> */}
                   <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div className="form-box">
                       <input type="text" name="repeatPassword" id="repeatPassword" placeholder="ПОВТОРИ ПАРОЛА" required="required" data-error="Повтори същата парола-задължително поле" />
                     </div>
                   </div>
-                  {/* <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <div className="form-box">
-                      <input type="text" name="time-picker" id="time-picker" placeholder="Time" required="required" data-error="Time is required." />
-                    </div>
-                  </div> */}
-                  {/* <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <div className="form-box">
-                      <select name="preferred_food" id="preferred_food" className="selectpicker">
-                        <option value="1" disabled>preferred food</option>
-                        <option value="2">Indian</option>
-                        <option value="3">Continental</option>
-                        <option value="4">Mexican</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <div className="form-box">
-                      <select name="occasion" id="occasion" className="selectpicker">
-                        <option value="1" disabled>Occasion</option>
-                        <option value="2">Wedding</option>
-                        <option value="3">Birthday</option>
-                        <option value="4">Anniversary</option>
-                      </select>
-                    </div>
-                  </div> */}
 
                   <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div className="reserve-book-btn text-center">
