@@ -30,7 +30,12 @@ function MyRecipes() {
               <h2 className="block-title text-center">
                 МОИТЕ РЕЦЕПТИ
               </h2>
-              <p className="title-caption text-center">Благодарим ти, че споделяш своите рецепти с нас! </p>
+              <div>
+                {myRecipes.length > 0
+                  ?  <p className="title-caption text-center">Благодарим ти, че споделяш своите рецепти с нас! </p>
+                  :   null
+                }
+              </div>
             </div>
             <div className="tab-menu">
               <div className="slider slider-single">

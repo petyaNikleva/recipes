@@ -1,12 +1,10 @@
 import {useNavigate} from "react-router";
-import { useAuthContext } from '../context/AuthContext.js';
-import { useNotificationContext, types } from '../context/NotificationContext.js';
+import { useNotificationContext, types } from '../../context/NotificationContext.js';
 
-import * as authService from '../services/authService.js'
+import * as authService from '../../services/authService.js'
 
 function Register () {
   const navigate = useNavigate();
-  const { login } = useAuthContext();
   const { addNotification } = useNotificationContext();
 
   const registerSubmitHandler = (e) => {
@@ -20,9 +18,8 @@ function Register () {
 
     authService.register( username, email, password, repeatPassword )
       .then((authData) => {
-        login(authData);
         addNotification('Успешна регисрация!', types.success);
-        navigate('/');
+        navigate('/login');
       })
       .catch(err => {
         err.message === 'Failed to fetch'

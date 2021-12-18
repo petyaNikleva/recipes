@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
-import * as authServise from '../services/authService.js';
-import { useAuthContext } from '../context/AuthContext.js';
+import * as authServise from '../../services/authService.js';
+import { useAuthContext } from '../../context/AuthContext.js';
 import { useEffect } from 'react';
 
 const Logout = () => {

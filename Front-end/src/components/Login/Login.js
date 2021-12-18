@@ -1,10 +1,10 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { useAuthContext } from '../context/AuthContext.js';
-import { useNotificationContext, types } from '../context/NotificationContext.js';
+import { useAuthContext } from '../../context/AuthContext.js';
+import { useNotificationContext, types } from '../../context/NotificationContext.js';
 
-import * as authService from '../services/authService.js'
+import * as authService from '../../services/authService.js'
 
 function Login() {
   const { login } = useAuthContext();

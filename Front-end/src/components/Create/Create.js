@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
-import * as recipesService from '../services/recipesService.js';
-import { useAuthContext } from '../context/AuthContext.js';
-import { useNotificationContext, types } from '../context/NotificationContext.js';
+import * as recipesService from '../../services/recipesService.js';
+import { useAuthContext } from '../../context/AuthContext.js';
+import { useNotificationContext, types } from '../../context/NotificationContext.js';
 
 
 function Create() {
@@ -66,7 +66,6 @@ function Create() {
                                             <input type="text" name="img" id="img" placeholder="СНИМКА..." required data-error="Img is required." />
                                         </div>
                                     </div>
-                                    {/* // TODO: requered notification here and below */}
                                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div className="form-box">
                                             <select name="difficulty" id="difficulty" className="" required>

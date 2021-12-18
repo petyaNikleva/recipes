@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { useAuthContext } from "../context/AuthContext.js"
+import { useAuthContext } from "../../context/AuthContext.js"
 
 function About() {
   const { user } = useAuthContext();
