@@ -25,8 +25,7 @@ function Register () {
         err.message === 'Failed to fetch'
         ? addNotification('Възникна грешка. Опитайте по-късно.', types.danger)
         : addNotification('Потребитеското име вече е заето.', types.danger)
-      }) 
-    
+      })  
   }
 
     return (

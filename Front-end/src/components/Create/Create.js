@@ -33,7 +33,7 @@ function Create() {
                 navigate('/recipes/my-recipes')
             }) 
             .catch(err => {
-                addNotification('Възникна грешка. Опитай пак!', types.danger);
+                addNotification('Възникна грешка. Моля, опитайте по-късно!', types.danger);
               }) 
 
     }
