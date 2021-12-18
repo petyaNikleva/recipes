@@ -5,11 +5,11 @@ function Footer () {
           <div className="container">
             <div className="row">
               <div className="footer-in-main">
-                {/* <div className="footer-logo">
+                <div className="footer-logo">
                   <div className="text-center">
-                    <img src="/images/logo.png" alt="" />
+                    <img src="/images/logo_01.png" alt="" />
                   </div>
-                </div> */}
+                </div>
 
                 <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                   <div className="footer-box-d">
