@@ -9,10 +9,13 @@ const Logout = () => {
     const { user, logout } = useAuthContext();
     useEffect(() => {
         authServise.logout(user.token)
-        .then(() => {
-            logout();
-            navigate('/')
-        })
+            .then(() => {
+                logout();
+                navigate('/')
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }, [])
 
     return null;

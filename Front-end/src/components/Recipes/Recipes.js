@@ -38,7 +38,7 @@ function Recipes() {
                                     {recipes.map(x => <RecipeCard key={x._id} recipe={x} />)}
                                     <div className="blog-btn-v">
                                         {user?._id
-                                            ? <Link to="/create" className="hvr-underline-from-center">ДОБАВИ РЕЦЕПТА</Link>
+                                            ? <Link to="/recipes/create" className="hvr-underline-from-center">ДОБАВИ РЕЦЕПТА</Link>
                                             : null
                                         }
                                     </div>
@@ -49,7 +49,7 @@ function Recipes() {
 
                                     <div className="blog-btn-v">
                                         {user?._id
-                                            ? <Link to="/create" className="hvr-underline-from-center">ДОБАВИ РЕЦЕПТА</Link>
+                                            ? <Link to="/recipes/create" className="hvr-underline-from-center">ДОБАВИ РЕЦЕПТА</Link>
                                             : null
                                         }
                                     </div>

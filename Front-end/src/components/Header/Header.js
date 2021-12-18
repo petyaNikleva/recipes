@@ -41,9 +41,9 @@ function Header() {
                                         <span className="icon-bar"></span>
                                     </button>
                                     <div className="logo">
-                                        <a className="navbar-brand js-scroll-trigger logo-header" href="#">
+                                        <Link className="navbar-brand js-scroll-trigger logo-header" to="/">
                                             <img src="/images/logo.png" alt="" />
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                                 <div id="navbar" className="navbar-collapse collapse">

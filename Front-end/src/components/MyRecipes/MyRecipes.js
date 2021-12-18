@@ -20,7 +20,8 @@ function MyRecipes() {
     recipesService.getOwn(user._id)
       .then(result => {
         setRecipes(result);
-      }).catch(err => {
+      })
+      .catch(err => {
         addNotification('Възникна грешка. Моля, опитайте по-късно!', types.danger);
       })
   }, [])

@@ -2,14 +2,11 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import * as recipesService from '../../services/recipesService.js';
 import { useAuthContext } from '../../context/AuthContext.js'
-//import useRecipeState from '../../hooks/useRecipeState.js';
-
 
 function Edit() {
     const { recipeId } = useParams();
     const { user } = useAuthContext();
     const [recipe, setRecipe] = useState({});
-    
 
     useEffect(() => {
         recipesService.getOne(recipeId)
@@ -17,7 +14,7 @@ function Edit() {
             setRecipe(recipe)
           })
       }, []);
-    //const [recipe, setRecipe] = useRecipeState(recipeId);
+    
     const navigate = useNavigate();
 
     const onEditRecipe = (e) => {
@@ -44,7 +41,10 @@ function Edit() {
             user.token)
             .then(recipe => {
                 navigate(`/recipes/details/${recipeId}`)
-            });
+            })
+            .catch (err => {
+                console.log(err)
+            })
 
     }
 
