@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 
 import { useAuthContext } from "../../context/AuthContext.js"
+import { useNotificationContext, types } from '../../context/NotificationContext.js';
 
 import RecipeCard from "./RecipeCard.js";
 import * as recipesService from "../../services/recipesService.js";
@@ -9,11 +10,14 @@ import * as recipesService from "../../services/recipesService.js";
 function Recipes() {
     //TODO: Loader
     const [recipes, setRecipes] = useState([]);
+    const { addNotification } = useNotificationContext();
 
     useEffect(() => {
         recipesService.getAll()
             .then(result => {
                 setRecipes(result);
+            }).catch(err => {
+                addNotification('Възникна грешка. Моля, опитайте по-късно!', types.danger);
             })
     }, []);
 
