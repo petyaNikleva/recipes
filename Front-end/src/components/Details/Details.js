@@ -16,11 +16,14 @@ function Details() {
   const { addNotification } = useNotificationContext();
 
   useEffect(() => {
-    let abortController = new AbortController(); 
+    let abortController = new AbortController();
     recipesService.getOne(recipeId)
       .then(recipeResult => {
-          setRecipe(recipeResult) 
-      });
+        setRecipe(recipeResult)
+      })
+      .catch(err => {
+        addNotification('Възникна грешка. Моля, опитайте по-късно!', types.danger);
+      })
     return () => {
       abortController.abort();
     };
@@ -32,6 +35,9 @@ function Details() {
     recipesService.deleteRecipe(recipeId, user.token)
       .then(() => {
         navigate('/');
+      })
+      .catch(err => {
+        addNotification('Възникна грешка. Моля, опитайте по-късно!', types.danger);
       })
       .finally(() => {
         setShow(false);
