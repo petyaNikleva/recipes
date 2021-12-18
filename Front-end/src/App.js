@@ -7,7 +7,7 @@ import Banner from "./components/Banner/Banner.js";
 import Recipes from "./components/Recipes/Recipes.js";
 import Footer from "./components/Footer/Footer.js";
 import Header from "./components/Header/Header.js";
-import MyRecipes from "./components/MyRecipres/MyRecipes.js";
+import MyRecipes from "./components/MyRecipes/MyRecipes.js";
 import Register from "./components/Register/Register.js";
 import Login from "./components/Login/Login.js";
 import Create from './components/Create/Create.js';

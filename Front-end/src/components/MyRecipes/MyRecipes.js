@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { useAuthContext } from "../../context/AuthContext.js";
+import { useNotificationContext, types } from "../../context/NotificationContext.js";
 
 import MyRecipeCard from "./MyRecipeCard.js";
 import * as recipesService from '../../services/recipesService.js'
@@ -10,14 +11,17 @@ import * as recipesService from '../../services/recipesService.js'
 function MyRecipes() {
   //TODO: Loader
 
-  const { user } = useAuthContext();
-
   const [myRecipes, setRecipes] = useState([]);
 
+  const { user } = useAuthContext();
+  const {addNotification} = useNotificationContext();
+  
   useEffect(() => {
     recipesService.getOwn(user._id)
       .then(result => {
         setRecipes(result);
+      }).catch(err => {
+        addNotification('Възникна грешка. Моля, опитайте по-късно!', types.danger);
       })
   }, [])
 
