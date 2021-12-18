@@ -56,12 +56,12 @@ function Register () {
                   </div>
                   <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div className="form-box">
-                      <input type="text" name="password" id="password" placeholder="ПАРОЛА" required="required" data-error="Паролата е задължителна"  />
+                      <input type="password" name="password" id="password" placeholder="ПАРОЛА" required="required" data-error="Паролата е задължителна"  />
                     </div>
                   </div>
                   <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div className="form-box">
-                      <input type="text" name="repeatPassword" id="repeatPassword" placeholder="ПОВТОРИ ПАРОЛА" required="required" data-error="Повтори същата парола-задължително поле" />
+                      <input type="password" name="repeatPassword" id="repeatPassword" placeholder="ПОВТОРИ ПАРОЛА" required="required" data-error="Повтори същата парола-задължително поле" />
                     </div>
                   </div>
 
