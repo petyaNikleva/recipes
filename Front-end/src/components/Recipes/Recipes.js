@@ -5,7 +5,9 @@ import { useAuthContext } from "../../context/AuthContext.js"
 import { useNotificationContext, types } from '../../context/NotificationContext.js';
 
 import RecipeCard from "./RecipeCard.js";
+import Button from "../Common/Button/Button.js";
 import * as recipesService from "../../services/recipesService.js";
+import './Recipes.css';
 
 function Recipes() {
     //TODO: Loader
@@ -34,15 +36,23 @@ function Recipes() {
                             </h2>
                             {recipes.length > 0
                                 ?
-                                <div className="blog-box clearfix">
-                                    {recipes.map(x => <RecipeCard key={x._id} recipe={x} />)}
-                                    <div className="blog-btn-v">
-                                        {user?._id
-                                            ? <Link to="/recipes/create" className="hvr-underline-from-center">ДОБАВИ РЕЦЕПТА</Link>
-                                            : null
-                                        }
+                                <>
+                                    <div className="block-title text-center text-custom">
+                                        <Button type="Основни"/>
+                                        <Button type="Супи"/>
+                                        <Button type="Аламинути"/>
+                                        <Button type="Десерти"/>
                                     </div>
-                                </div>
+                                    <div className="blog-box clearfix">
+                                        {recipes.map(x => <RecipeCard key={x._id} recipe={x} />)}
+                                        <div className="blog-btn-v">
+                                            {user?._id
+                                                ? <Link to="/recipes/create" className="hvr-underline-from-center">ДОБАВИ РЕЦЕПТА</Link>
+                                                : null
+                                            }
+                                        </div>
+                                    </div>
+                                </>
                                 :
                                 <div className="blog-box clearfix banner-text">
                                     <h2>Няма добавени рецепти.</h2>
