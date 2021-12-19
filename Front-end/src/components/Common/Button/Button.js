@@ -1,7 +1,8 @@
 function Button (props) {
+
     return (
         <>
-            <button type="button" class="btn btn-light">{props.type}</button>
+            <button onClick={props.filterHandler} type="button" className="btn btn-light">{props.type}</button>
         </>
     )
 }

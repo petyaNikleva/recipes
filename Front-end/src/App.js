@@ -48,7 +48,7 @@ function App() {
                             <Route path='*' element={<Page404 />} />
                         </Routes>
                     </main>
-                    <Footer />
+                    {/* <Footer /> */}
                 </div>
             </NotificationProvider>
         </AuthProvider>

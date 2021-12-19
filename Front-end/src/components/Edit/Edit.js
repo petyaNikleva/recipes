@@ -13,7 +13,7 @@ function Edit() {
           .then(recipe => {
             setRecipe(recipe)
           })
-      }, []);
+      }, [recipeId]);
     
     const navigate = useNavigate();
 
