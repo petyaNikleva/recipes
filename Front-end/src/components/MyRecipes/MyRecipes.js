@@ -24,7 +24,7 @@ function MyRecipes() {
       .catch(err => {
         addNotification('Възникна грешка. Моля, опитайте по-късно!', types.danger);
       })
-  }, [])
+  }, [addNotification, user._id])
 
   return (
     <div id="menu" className="menu-main pad-top-100 pad-bottom-100">

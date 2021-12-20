@@ -27,7 +27,7 @@ function Details() {
     return () => {
       abortController.abort();
     };
-  }, [recipeId]);
+  }, [recipeId, addNotification]);
 
   const deleteHandler = (e) => {
     e.preventDefault();
@@ -91,7 +91,7 @@ function Details() {
                     : user._id == recipe._ownerId
                       ? <>
                         <Link to={`/recipes/edit/${recipe._id}`} className="table-btn hvr-underline-from-center" style={{ borderColor: "white" }}>Редактирай</Link>
-                        <a href="#" className="table-btn hvr-underline-from-center" onClick={deleteClickHandler} style={{ borderColor: "white" }}>Изтрий</a>
+                        <Link to='#' className="table-btn hvr-underline-from-center" onClick={deleteClickHandler} style={{ borderColor: "white" }}>Изтрий</Link>
                       </>
                       : <button onClick={likeClickHandler} className="table-btn hvr-underline-from-center" style={{ borderColor: "white" }}>Харесай</button>
                   }

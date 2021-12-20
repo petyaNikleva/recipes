@@ -16,7 +16,7 @@ const Logout = () => {
             .catch(err => {
                 console.log(err)
             })
-    }, [])
+    })
 
     return null;
 };

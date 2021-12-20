@@ -25,7 +25,7 @@ function Recipes() {
                 console.log(err)
                 addNotification('Възникна грешка. Моля, опитайте по-късно!', types.danger);
             })
-    }, []);
+    }, [addNotification]);
 
     const { user } = useAuthContext();
 
