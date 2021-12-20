@@ -1,3 +1,6 @@
+import { Link } from 'react-router-dom';
+import './Footer.css'
+
 function Footer () {
     return (
         <div id="footer" className="footer-main">
@@ -13,17 +16,28 @@ function Footer () {
 
                 <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                   <div className="footer-box-d">
-                    <h3>Начало</h3>
+                    <h3>
+                      <Link to="/" className="orange-red">Начало</Link>
+                    </h3>
+                      <div className="white-color">
+                        Защото обичаме да готвим за вас и с вас!
+                      </div>
+                  </div>
+                </div>
 
+              
+
+                
+
+                <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                  <div className="footer-box-b">
+                    <h3>Рецепти</h3>
                     {/* <ul>
-                      <li>
-                        <p>Monday - Thursday </p>
-                        <span> 11:00 AM - 9:00 PM</span>
-                      </li>
-                      <li>
-                        <p>Friday - Saturday </p>
-                        <span>  11:00 AM - 5:00 PM</span>
-                      </li>
+                      <li><a href="#">Основни</a></li>
+                      <li><a href="#">Аламинути</a></li>
+                      <li><a href="#">Десерти</a></li>
+                      <li><a href="#">Супи</a></li>
+
                     </ul> */}
                   </div>
                 </div>
@@ -61,39 +75,16 @@ function Footer () {
                     </ul> */}
 
                   </div> 
-                </div>
+                </div>      
 
-                
 
-                <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div className="footer-box-b">
-                    <h3>Рецепти</h3>
-                    {/* <ul>
-                      <li><a href="#">Основни</a></li>
-                      <li><a href="#">Аламинути</a></li>
-                      <li><a href="#">Десерти</a></li>
-                      <li><a href="#">Супи</a></li>
-
-                    </ul> */}
-                  </div>
-                </div>
                 <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                   <div className="footer-box-c">
                     <h3>Свържете се с нас</h3>
-                    {/* <p>
-                      <i className="fa fa-map-signs" aria-hidden="true"></i>
-                      <span>6 E Esplanade, St Albans VIC 3021, Australia</span>
-                    </p>
-                    <p>
-                      <i className="fa fa-mobile" aria-hidden="true"></i>
-                      <span>
-                        +91 80005 89080
-                      </span>
-                    </p>
                     <p>
                       <i className="fa fa-envelope" aria-hidden="true"></i>
-                      <span><a href="#">support@foodfunday.com</a></span>
-                    </p> */}
+                      <span>we.love.to.cook@gmial.com</span>
+                    </p> 
                   </div>
                 </div>
 

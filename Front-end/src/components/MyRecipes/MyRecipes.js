@@ -9,7 +9,6 @@ import * as recipesService from '../../services/recipesService.js'
 
 
 function MyRecipes() {
-  //TODO: Loader
 
   const [myRecipes, setRecipes] = useState([]);
 

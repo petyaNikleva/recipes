@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import * as recipesService from '../../services/recipesService.js';
 import { useAuthContext } from '../../context/AuthContext.js';
 import { useNotificationContext, types } from '../../context/NotificationContext.js';
-
+import './Create.css'
 
 function Create() {
     const { user } = useAuthContext();
@@ -51,7 +51,7 @@ function Create() {
                                     </h2>
                                 </div>
 
-                                <p style={{ color: "orangered" }}>СПОДЕЛИ Я С НАС</p>
+                                <p className="orange-red">СПОДЕЛИ Я С НАС</p>
 
                                 <form onSubmit={onRecipeCreate} id="contact-form" method="POST" className="reservations-box" name="contactform">
                                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">

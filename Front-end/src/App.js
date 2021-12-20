@@ -5,7 +5,7 @@ import { NotificationProvider } from './context/NotificationContext.js';
 import About from "./components/About/About.js";
 import Banner from "./components/Banner/Banner.js";
 import Recipes from "./components/Recipes/Recipes.js";
-//import Footer from "./components/Footer/Footer.js";
+import Footer from "./components/Footer/Footer.js";
 import Header from "./components/Header/Header.js";
 import MyRecipes from "./components/MyRecipes/MyRecipes.js";
 import Register from "./components/Register/Register.js";
@@ -48,7 +48,7 @@ function App() {
                             <Route path='*' element={<Page404 />} />
                         </Routes>
                     </main>
-                    {/* <Footer /> */}
+                    <Footer />
                 </div>
             </NotificationProvider>
         </AuthProvider>

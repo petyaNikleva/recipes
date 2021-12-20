@@ -11,7 +11,7 @@ function Banner () {
                   <h1>Гответе с нас  <span className="typer" id="some-id" data-delay="200" data-delim=":" data-words="вкусно:лесно:здравословно" data-colors="red"></span><span className="cursor"
                     data-owner="some-id"></span></h1>
                   <h2>Най-вкусните рецепти</h2>
-                  <p>Защото обичаме да готвим!</p>
+                  <p>Защото обичаме да готвим за вас!</p>
                 </div>
               </div>
             </div>
