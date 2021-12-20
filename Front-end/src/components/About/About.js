@@ -1,10 +1,4 @@
-import { Link } from 'react-router-dom';
-
-import { useAuthContext } from "../../context/AuthContext.js"
-
 function About() {
-  const { user } = useAuthContext();
-
   return (
     <div id="about" className="about-main pad-top-100 pad-bottom-100">
       <div className="container">
@@ -18,12 +12,6 @@ function About() {
               <p> Тук ще намерите много рецепти от традиционната българска кухня, които ние с голямо желание споделяме с ВАС. </p>
 
               <p> Отворени сме за вашите предложения за невероятни вкусни рецепти. Регистрирайте се и бъдeте част от нашето семeйството.</p>
-              <div className="book-btn">
-                {user?._id
-                  ? null
-                  : <Link to="/register" className="table-btn hvr-underline-from-center">Регистрирай се</Link>
-                }
-              </div>
             </div>
           </div>
           <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
