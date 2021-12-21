@@ -61,30 +61,3 @@ button {
 
 
 
-/* .modal-custom {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width:100px;
-    height: 100px;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 10;
-  }
-  
-  .modal-main-custom {
-    position:fixed;
-    background: white;
-    width: 80%;
-    height: auto;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-  }
-  
-  .display-block {
-    display: block;
-  }
-  
-  .display-none {
-    display: none;
-  } */

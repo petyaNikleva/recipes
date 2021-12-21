@@ -1,28 +1,52 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
-import { useAuthContext } from "../../context/AuthContext.js"
+import { useAuthContext } from "../../context/AuthContext.js";
+
+import './Header.css';
 
 function Header() {
     const { user } = useAuthContext();
 
     let guestNavigation = (
-        <>  
-            <li><Link to="/">НАЧАЛО</Link></li>
-            <li><Link to="/recipes">РЕЦЕПТИ</Link></li>
-            <li><Link to="/login">ВХОД</Link></li>
-            <li><Link to="/register">РЕГИСТРАЦИЯ</Link></li>
-            <li><Link to="/about">ЗА НАС</Link></li>
+        <>
+            <li ><NavLink style={({ isActive }) => ({
+                color: isActive ? 'orangered' : 'white'
+            })} to="/">НАЧАЛО</NavLink></li>
+            <li ><NavLink style={({ isActive }) => ({
+                color: isActive ? 'orangered' : 'white'
+            })} to="/recipes">РЕЦЕПТИ</NavLink></li>
+            <li ><NavLink style={({ isActive }) => ({
+                color: isActive ? 'orangered' : 'white'
+            })} to="/login">ВХОД</NavLink></li>
+            <li ><NavLink style={({ isActive }) => ({
+                color: isActive ? 'orangered' : 'white'
+            })} to="/register">РЕГИСТРАЦИЯ</NavLink></li>
+            <li ><NavLink style={({ isActive }) => ({
+                color: isActive ? 'orangered' : 'white'
+            })} to="/about">ЗА НАС</NavLink></li>
         </>
     );
 
     let userNavigation = (
         <>
-            <li className="active"><Link to="/">НАЧАЛО</Link></li>
-            <li><Link to="/recipes">РЕЦЕПТИ</Link></li>
-            <li><Link to="/recipes/create">СЪЗДАЙ РЕЦЕПТА</Link></li>
-            <li><Link to="/recipes/my-recipes">МОИТЕ РЕЦЕПТИ</Link></li>
-            <li><Link to="/about">ЗА НАС</Link></li>
-            <li><Link to="/logout">ИЗХОД</Link></li>
+            <li><NavLink style={({ isActive }) => ({
+                color: isActive ? 'orangered' : 'white'
+            })}  to="/">НАЧАЛО</NavLink></li>
+            <li><NavLink style={({ isActive }) => ({
+                color: isActive ? 'orangered' : 'white'
+            })} to="/recipes" end={true}>РЕЦЕПТИ</NavLink></li>
+            <li><NavLink style={({ isActive }) => ({
+                color: isActive ? 'orangered' : 'white'
+            })}  to="/recipes/create">СЪЗДАЙ РЕЦЕПТА</NavLink></li>
+            <li><NavLink style={({ isActive }) => ({
+                color: isActive ? 'orangered' : 'white'
+            })}  to="/recipes/my-recipes">МОИТЕ РЕЦЕПТИ</NavLink></li>
+            <li><NavLink style={({ isActive }) => ({
+                color: isActive ? 'orangered' : 'white'
+            })}  to="/about">ЗА НАС</NavLink></li>
+            <li><NavLink style={({ isActive }) => ({
+                color: isActive ? 'orangered' : 'white'
+            })}  to="/logout">ИЗХОД</NavLink></li>
         </>
     )
 

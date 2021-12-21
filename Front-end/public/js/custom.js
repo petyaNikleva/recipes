@@ -46,13 +46,13 @@
 		/* =========================
             NAV MENU
         =========================*/
-		$('.navbar-nav li a').on("click", function(e) {
-			$('.navbar-nav li').removeClass('active');
-			var $parent = $(this).parent();
-			if (!$parent.hasClass('active')) {
-				$parent.addClass('active');
-			}
-		});
+		// $('.navbar-nav li a').on("click", function(e) {
+		// 	$('.navbar-nav li').removeClass('active');
+		// 	var $parent = $(this).parent();
+		// 	if (!$parent.hasClass('active')) {
+		// 		$parent.addClass('active');
+		// 	}
+		// });
 		
 		/* =========================
             CAROUSEL 
