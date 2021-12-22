@@ -1,5 +1,3 @@
-
-
 function Banner () {
     return (
         <div id="banner" className="banner full-screen-mode parallax">
