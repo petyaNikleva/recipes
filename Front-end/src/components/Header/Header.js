@@ -7,46 +7,46 @@ import './Header.css';
 function Header() {
     const { user } = useAuthContext();
 
+    const checkIsActive = ({isActive}) => isActive ? {color: 'orangered'} : {color: 'white'}
+
     let guestNavigation = (
         <>
-            <li ><NavLink style={({ isActive }) => ({
-                color: isActive ? 'orangered' : 'white'
-            })} to="/">НАЧАЛО</NavLink></li>
-            <li ><NavLink style={({ isActive }) => ({
-                color: isActive ? 'orangered' : 'white'
-            })} to="/recipes">РЕЦЕПТИ</NavLink></li>
-            <li ><NavLink style={({ isActive }) => ({
-                color: isActive ? 'orangered' : 'white'
-            })} to="/login">ВХОД</NavLink></li>
-            <li ><NavLink style={({ isActive }) => ({
-                color: isActive ? 'orangered' : 'white'
-            })} to="/register">РЕГИСТРАЦИЯ</NavLink></li>
-            <li ><NavLink style={({ isActive }) => ({
-                color: isActive ? 'orangered' : 'white'
-            })} to="/about">ЗА НАС</NavLink></li>
+            <li>
+                <NavLink style={checkIsActive} to="/">НАЧАЛО</NavLink>
+            </li>
+            <li>
+                <NavLink style={checkIsActive} to="/recipes">РЕЦЕПТИ</NavLink>
+            </li>
+            <li>
+                <NavLink style={checkIsActive} to="/login">ВХОД</NavLink>
+            </li>
+            <li>
+                <NavLink style={checkIsActive} to="/register">РЕГИСТРАЦИЯ</NavLink>
+            </li>
+            <li>
+                <NavLink style={checkIsActive} to="/about">ЗА НАС</NavLink>
+            </li>
         </>
     );
 
     let userNavigation = (
         <>
-            <li><NavLink style={({ isActive }) => ({
-                color: isActive ? 'orangered' : 'white'
-            })}  to="/">НАЧАЛО</NavLink></li>
-            <li><NavLink style={({ isActive }) => ({
-                color: isActive ? 'orangered' : 'white'
-            })} to="/recipes" end={true}>РЕЦЕПТИ</NavLink></li>
-            <li><NavLink style={({ isActive }) => ({
-                color: isActive ? 'orangered' : 'white'
-            })}  to="/recipes/create">СЪЗДАЙ РЕЦЕПТА</NavLink></li>
-            <li><NavLink style={({ isActive }) => ({
-                color: isActive ? 'orangered' : 'white'
-            })}  to="/recipes/my-recipes">МОИТЕ РЕЦЕПТИ</NavLink></li>
-            <li><NavLink style={({ isActive }) => ({
-                color: isActive ? 'orangered' : 'white'
-            })}  to="/about">ЗА НАС</NavLink></li>
-            <li><NavLink style={({ isActive }) => ({
-                color: isActive ? 'orangered' : 'white'
-            })}  to="/logout">ИЗХОД</NavLink></li>
+            <li>
+                <NavLink style={checkIsActive}  to="/">НАЧАЛО</NavLink>
+            </li>
+            <li>
+                <NavLink style={checkIsActive} to="/recipes" end={true}>РЕЦЕПТИ</NavLink>
+            </li>
+            <li>
+                <NavLink style={checkIsActive} to="/recipes/create">СЪЗДАЙ РЕЦЕПТА</NavLink>
+            </li>
+            <li>
+                <NavLink style={checkIsActive} to="/recipes/my-recipes">МОИТЕ РЕЦЕПТИ</NavLink>
+            </li>
+            <li>
+                <NavLink style={checkIsActive} to="/about">ЗА НАС</NavLink>
+            </li>
+            <li><NavLink style={checkIsActive}  to="/logout">ИЗХОД</NavLink></li>
         </>
     )
 
