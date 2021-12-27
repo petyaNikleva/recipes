@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Recipes app
 
 This project is for sharing recipes. The front-end part is created with React V6. The back-end part uses rest api created with Node js, Express js and Mongoose.
 
