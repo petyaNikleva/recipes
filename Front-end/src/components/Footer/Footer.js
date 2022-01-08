@@ -48,7 +48,7 @@ function Footer() {
                   <h3>Свържете се с нас</h3>
                   <p>
                     <i className="fa fa-envelope" aria-hidden="true"></i>
-                    <span>we.love.to.cook@gmail.com</span>
+                    <span>we-love-cooking@gmail.com</span>
                   </p>
                 </div>
               </div>
