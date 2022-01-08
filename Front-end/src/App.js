@@ -17,7 +17,7 @@ import Edit from './components/Edit/Edit.js';
 import Page404 from './components/Page404/Page404.js';
 import PrivateRoute from './components/Common/PrivateRoute.js';
 import PublicRoute from './components/Common/PublicRoute.js';
-import Notification from './components/Common/Notification/Notification.js'
+import Notification from './components/Common/Notification/Notification.js';
 
 function App() {
 

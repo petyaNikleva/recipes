@@ -8,20 +8,24 @@ import RecipeCard from "./RecipeCard.js";
 import Button from "../Common/Button/Button.js";
 import * as recipesService from "../../services/recipesService.js";
 import './Recipes.css';
+import Loading from "../Loading/Loading.js";
 
 function Recipes() {
     const [recipes, setRecipes] = useState([]);
     const [allRecipes, setAllRecipes] = useState([]);
+    const [showLoader, setShowLoader] = useState(true);
+
 
     const { addNotification } = useNotificationContext();
 
     useEffect(() => {
         recipesService.getAll()
             .then(result => {
+                setShowLoader(false);
                 setRecipes(result);
                 setAllRecipes(result);
             }).catch(err => {
-                console.log(err)
+                setShowLoader(false);
                 addNotification('Възникна грешка. Моля, опитайте по-късно!', types.danger);
             })
     }, [addNotification]);
@@ -51,6 +55,13 @@ function Recipes() {
                                 <Button filterHandler={filterHandler} type="Аламинути" />
                                 <Button filterHandler={filterHandler} type="Десерти" />
                             </div>
+                            {showLoader
+                                ? <div className="blog-box clearfix">
+                                    <Loading />
+                                </div>
+                                : null
+                            }
+
                             {recipes.length > 0
                                 ?
                                 <div className="blog-box clearfix">
