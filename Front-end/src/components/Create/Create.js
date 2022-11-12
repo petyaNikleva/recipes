@@ -16,6 +16,9 @@ function Create() {
 
         let name = formData.get('name');
         let img = formData.get('img');
+        if (!img) {
+            img = 'https://www.kakvodaqm.bg/wp-content/uploads/2022/01/na-oko.jpg';
+        }
         let difficulty = formData.get('difficulty');
         let type = formData.get('type');
         let description = formData.get('description');
@@ -63,7 +66,7 @@ function Create() {
 
                                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div className="form-box">
-                                            <input type="text" name="img" id="img" placeholder="СНИМКА..." required data-error="Img is required." />
+                                            <input type="text" name="img" id="img" placeholder="Image URL..." data-error="Img is required." />
                                         </div>
                                     </div>
                                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">

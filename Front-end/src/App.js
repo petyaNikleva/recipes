@@ -19,6 +19,8 @@ import PrivateRoute from './components/Common/PrivateRoute.js';
 import PublicRoute from './components/Common/PublicRoute.js';
 import Notification from './components/Common/Notification/Notification.js';
 
+import './App.css'
+
 function App() {
 
     return (

@@ -5,3 +5,27 @@
 .white-color {
     color: white !important;
 }
+
+
+#footer {
+    position: absolute;
+    bottom: 0px;
+    height: 80px;
+    left: 0px;
+    right: 0px;
+  
+    width: 100%;
+    overflow: hidden;
+}
+
+#footer .footer-box {
+    padding-top: 16px;
+}
+
+#footer h3{
+    font-size: 20px;
+}
+
+#footer .white-color {
+    font-size: 12px;
+}
