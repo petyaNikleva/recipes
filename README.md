@@ -1,10 +1,10 @@
 # Recipes app
 
-This project is for sharing recipes. The front-end part is created with React V6. The back-end part uses rest api created with Node js, Express js and Mongoose.
+This project is for sharing recipes. The front-end part is created with React library. The back-end part uses rest api created with Node js, Express js and Mongoose.
 
 To access the application go to: https://we-love-cooking.web.app
 
-You can also download and run it locally as per the below instructions.
+You can also run it locally as per the below instructions.
 
 ## Available Scripts
 
