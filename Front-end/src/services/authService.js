@@ -1,5 +1,4 @@
-const baseUrl = 'http://localhost:5000';
-// const baseUrl = 'https://rest-api-recipes.herokuapp.com';
+import { baseUrl } from "./constants.js";
 
 export const login = async (username, password) => {
     let res = await fetch(`${baseUrl}/auth/login`, {
