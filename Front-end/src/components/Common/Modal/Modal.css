@@ -42,6 +42,10 @@ button {
   margin: 5px;
   border-radius: 6px;
 }
+/* 
+button:hover {
+  color: black !important;
+}  */
 
 /* The Close Button */
 .close {

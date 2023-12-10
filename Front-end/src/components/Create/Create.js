@@ -34,10 +34,10 @@ function Create() {
             .then(recipe => {
                 addNotification('Успешно създаде рецепта!', types.success);
                 navigate('/recipes/my-recipes')
-            }) 
+            })
             .catch(err => {
                 addNotification('Възникна грешка. Моля, опитайте по-късно!', types.danger);
-              }) 
+            })
 
     }
 
@@ -93,13 +93,13 @@ function Create() {
 
                                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <div className="form-box">
-                                            <textarea type="text" name="description" id="description" placeholder="ОПИСАНИЕ..." required minLength="10"  rows="6" cols="105" />
+                                            <textarea type="text" name="description" id="description" placeholder="ОПИСАНИЕ..." required minLength="10" rows="6" cols="105" />
                                         </div>
                                     </div>
 
                                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <div className="reserve-book-btn text-center">
-                                            <button className="hvr-underline-from-center">СЪЗДАЙ</button>
+                                        <div className="reserve-book-btn">
+                                            <button id='create' className="hvr-underline-from-center">СЪЗДАЙ</button>
                                         </div>
                                     </div>
                                 </form>

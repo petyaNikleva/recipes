@@ -75,14 +75,6 @@ function Recipes() {
                                 </div>
                                 :
                                 <div className="blog-box clearfix banner-text">
-                                    {/* <h2 style={{ color: "white" }}>Няма добавени рецепти.</h2> */}
-
-                                    <div className="blog-btn-v">
-                                        {user?._id
-                                            ? <Link to="/recipes/create" className="hvr-underline-from-center">ДОБАВИ РЕЦЕПТА</Link>
-                                            : null
-                                        }
-                                    </div>
                                 </div>}
                         </div>
                     </div>
