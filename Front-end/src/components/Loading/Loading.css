@@ -1,5 +1,6 @@
 .loader-container {
     transition-timing-function: linear, step-end;
+    margin-bottom: 20px;
 }
 
 .loader {
@@ -66,4 +67,9 @@
     100% {
         transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
     }
+}
+
+.text-wait {
+    font-weight: bold;
+    font-size: 18px;
 }
