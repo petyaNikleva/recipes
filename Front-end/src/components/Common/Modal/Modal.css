@@ -42,10 +42,11 @@ button {
   margin: 5px;
   border-radius: 6px;
 }
-/* 
+
 button:hover {
-  color: black !important;
-}  */
+  color: #e75b1e !important;
+  background-color: transparent;
+} 
 
 /* The Close Button */
 .close {

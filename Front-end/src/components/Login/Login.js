@@ -31,8 +31,14 @@ function Login() {
   }
 
   return (
-    <div id="reservation" className="reservations-main pad-top-100 pad-bottom-100">
-      <div className="container">
+    <div id="reservation" className="blog-main reservations-main pad-top-100 pad-bottom-100"
+      style={{
+        "display": "flex",
+        "alignItems": "center",
+        "justifyContent": 'center',
+      }}
+    >
+      <div className="container" >
         <div className="row">
           <div className="form-reservations-box">
             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -64,7 +70,7 @@ function Login() {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 export default Login;

@@ -89,10 +89,10 @@ function Details() {
                   {!user?._id
                     ? null
                     : user._id == recipe._ownerId
-                      ? <>
-                        <Link to={`/recipes/edit/${recipe._id}`} className="table-btn hvr-underline-from-center" style={{ borderColor: "white" }}>Редактирай</Link>
-                        <Link to='#' className="table-btn hvr-underline-from-center" onClick={deleteClickHandler} style={{ borderColor: "white" }}>Изтрий</Link>
-                      </>
+                      ? <div>
+                          <Link to={`/recipes/edit/${recipe._id}`} className="table-btn hvr-underline-from-center"  style={{"marginRight": "6px"}}>Редактирай</Link>
+                          <Link to='#' className="table-btn hvr-underline-from-center" onClick={deleteClickHandler}>Изтрий</Link>
+                        </div>
                       : <button onClick={likeClickHandler} className="table-btn hvr-underline-from-center" style={{ borderColor: "white" }}>Харесай</button>
                   }
                 </div>
