@@ -29,7 +29,13 @@ function Register () {
   }
 
     return (
-        <div id="reservation" className="reservations-main pad-top-100 pad-bottom-100">
+        <div id="reservation" className="blog-main reservations-main pad-top-100 pad-bottom-100"
+        style={{
+          "display": "flex",
+          "alignItems": "center",
+          "justifyContent": 'center',
+        }}
+        >
         <div className="container">
           <div className="row">
             <div className="form-reservations-box">
@@ -40,7 +46,7 @@ function Register () {
                   </h2>
                 </div>
                 
-                <p>ВСИЧКИ ПОЛЕТА СА ЗАДЪЛЖИТЕЛНИ</p>
+                <p style={{'color': '#e7dada'}}>ВСИЧКИ ПОЛЕТА СА ЗАДЪЛЖИТЕЛНИ</p>
 
                 <form id="register-form" method="POST" onSubmit={registerSubmitHandler} className="reservations-box" name="refiter-form">
                   <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">

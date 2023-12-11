@@ -18,7 +18,6 @@ function MyRecipeCard({ myRecipe }) {
                     <p>
                         {shortDescription}
                     </p>
-
                 </div>
                 <span className="offer-price">&#128077; {myRecipe.likes?.length}</span>
             </div>

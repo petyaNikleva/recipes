@@ -424,6 +424,7 @@ html, body{ height: 100%; }
 	font-size: 37px;
     line-height: 100px;
 	padding-bottom:25px;
+    margin-top: 28px;;
 }
 .banner-text p{
 	font-family: 'Roboto', sans-serif;
@@ -446,7 +447,7 @@ html, body{ height: 100%; }
 }
 .book-btn a:hover{
 	border:3px solid red;
-	background:none;
+	background: #c79078;
 }
 .hvr-underline-from-center {
     display: inline-block;
@@ -480,7 +481,6 @@ html, body{ height: 100%; }
     left: 0;
     right: 0;
 }
-
 
 .banner-cell .mouse {
   position: relative;
@@ -586,10 +586,17 @@ html, body{ height: 100%; }
     ABOUT AREA
 -------------------------------------------------------------------*/
 
+#about {
+    display: flex;
+    align-items: center;
+    background:#E6E6E6;
+    height: 100%;
+}
+
 .about-main{
 	background:#E6E6E6;
-    /* TODO */
 }
+
 .pad-top-100{
     padding-top: 90px;
 }
