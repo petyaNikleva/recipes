@@ -1,3 +1,12 @@
 .text-custom {
-    font-family:Verdana, Geneva, Tahoma, sans-serif
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 12px;
+}
+
+.recipes-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
 }

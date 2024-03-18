@@ -6,15 +6,15 @@ import { useNotificationContext, types } from '../../context/NotificationContext
 
 import RecipeCard from "./RecipeCard.js";
 import Button from "../Common/Button/Button.js";
+import Loading from "../Loading/Loading.js";
+
 import * as recipesService from "../../services/recipesService.js";
 import './Recipes.css';
-import Loading from "../Loading/Loading.js";
 
 function Recipes() {
     const [recipes, setRecipes] = useState([]);
     const [allRecipes, setAllRecipes] = useState([]);
     const [showLoader, setShowLoader] = useState(true);
-
 
     const { addNotification } = useNotificationContext();
 
@@ -61,21 +61,20 @@ function Recipes() {
                                 </div>
                                 : null
                             }
-
                             {recipes.length > 0
                                 ?
-                                <div className="blog-box clearfix">
+                                <div className="blog-box recipes-wrapper">
                                     {recipes.map(x => <RecipeCard key={x._id} recipe={x} />)}
-                                    <div className="blog-btn-v">
-                                        {user?._id
-                                            ? <Link to="/recipes/create" className="hvr-underline-from-center">ДОБАВИ РЕЦЕПТА</Link>
-                                            : null
-                                        }
-                                    </div>
                                 </div>
                                 :
-                                <div className="blog-box clearfix banner-text">
+                                <div className="blog-box banner-text">
                                 </div>}
+                            <div className="blog-btn-v">
+                                {user?._id
+                                    ? <Link to="/recipes/create" className="hvr-underline-from-center">ДОБАВИ РЕЦЕПТА</Link>
+                                    : null
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
