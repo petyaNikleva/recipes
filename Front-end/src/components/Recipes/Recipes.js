@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 
 import { useAuthContext } from "../../context/AuthContext.js"
 import { useNotificationContext, types } from '../../context/NotificationContext.js';
 
-import RecipeCard from "./RecipeCard.js";
 import Button from "../Common/Button/Button.js";
 import Loading from "../Loading/Loading.js";
+import LazyRecipeCard from "./LazyRecipeCard.js";
 
 import * as recipesService from "../../services/recipesService.js";
 import './Recipes.css';
@@ -61,14 +61,15 @@ function Recipes() {
                                 </div>
                                 : null
                             }
-                            {recipes.length > 0
-                                ?
-                                <div className="blog-box recipes-wrapper">
-                                    {recipes.map(x => <RecipeCard key={x._id} recipe={x} />)}
-                                </div>
-                                :
-                                <div className="blog-box banner-text">
-                                </div>}
+                            <Suspense fallback={<div>...</div>}>
+                                {recipes.length > 0 ? (
+                                    <div className="blog-box recipes-wrapper">
+                                        {recipes.map(x => <LazyRecipeCard key={x._id} recipe={x} />)}
+                                    </div>
+                                ) : (
+                                    <div className="blog-box banner-text"></div>
+                                )}
+                            </Suspense>
                             <div className="blog-btn-v">
                                 {user?._id
                                     ? <Link to="/recipes/create" className="hvr-underline-from-center">ДОБАВИ РЕЦЕПТА</Link>
