@@ -5,7 +5,9 @@ import * as recipesService from '../../services/recipesService.js'
 import { useAuthContext } from "../../context/AuthContext.js"
 import { useNotificationContext, types } from '../../context/NotificationContext.js';
 
-import Modal from '../../components/Common/Modal/Modal.js'
+import Modal from '../../components/Common/Modal/Modal.js';
+
+import './Details.css';
 
 function Details() {
   const navigate = useNavigate();
@@ -67,14 +69,13 @@ function Details() {
       .then(() => {
         setRecipe(state => ({ ...state, likes }));
       })
-
   }
 
   return (
     <>
       <Modal show={show} deleteHandler={deleteHandler} onCloseDeleteHandler={onCloseDeleteHandler} />
       <div id="about" className="about-main pad-top-100 pad-bottom-100">
-        <div className="container">
+        <div className="container container-details">
           <div className="row">
             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
               <div className="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
