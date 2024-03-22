@@ -41,8 +41,8 @@ function MyRecipes() {
                 }
               </div>
             </div>
-            <div className="tab-menu">
-              <div className="slider slider-single">
+            <div>
+              <div>
                 <div>
                   {myRecipes.length > 0
                     ? <>
