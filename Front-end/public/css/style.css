@@ -1180,10 +1180,10 @@ html, body{ height: 100%; }
 
 .blog-main{
 	background:url(../images/blog_bg.jpg) no-repeat center;
-	background-attachment:fixed;
-	background-size:cover;
-	position:relative;
-    height: 100%;
+	background-attachment: fixed;
+	background-size: cover;
+	position: relative;
+    min-height: 90vh;
 }
 
 .blog-main::before {
