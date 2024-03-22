@@ -1182,7 +1182,7 @@ html, body{ height: 100%; }
 	background-attachment:fixed;
 	background-size:cover;
 	position:relative;
-    min-height: 95vh;
+    height: 100%;
 }
 
 .blog-main::before {
